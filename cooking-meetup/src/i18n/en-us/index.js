@@ -40,6 +40,12 @@ export default {
       back: 'Back'
     },
   },
+  tabs: {
+    join: {
+      title: 'Join a room',
+      tab
+    }
+  },
   errorPage: {
     message: 'Sorry, nothing here... 404',
     back: 'Go back'

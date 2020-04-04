@@ -40,7 +40,7 @@
         :name="2"
         :title="$t('stepper.chefWanted.title')"
         icon="create_new_folder"
-        :done="step > 2"
+        :done="step > 2 && peopleGroup === 'friends'"
       >
         {{ $t("stepper.chefWanted.text") }}<br />
         <q-checkbox v-model="chefWanted" />
@@ -109,17 +109,12 @@
         </q-stepper-navigation>
       </q-step>
     </q-stepper>
-    <div>
-      {{ step }}<br />
-      {{ peopleGroup }}<br />
-      {{ chefWanted }}<br />
-    </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "Stepper",
+  name: "JoinStepper",
   data() {
     return {
       step: 1,
