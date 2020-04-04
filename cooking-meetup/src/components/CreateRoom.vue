@@ -6,9 +6,24 @@
 
     <div>
       <q-btn
+        v-if="!roomUrl"
         @click="createRoom"
         color="primary"
         :label="$t('createRoom.createButton')"
+      />
+
+      <q-btn
+        v-if="roomUrl"
+        @click="openRoom"
+        color="primary"
+        :label="$t('createRoom.openButton')"
+      />
+
+      <q-btn
+        v-if="inviteUrl"
+        @click="copyRoom"
+        color="primary"
+        :label="$t('createRoom.copyButton')"
       />
     </div>
   </div>
@@ -16,6 +31,7 @@
 
 <script>
 import qs from 'qs';
+import { copyToClipboard } from 'quasar'
 export default {
   name: 'CreateRoom',
   data () {
@@ -29,7 +45,9 @@ export default {
         {value: 'vegan', label: this.$i18n.t('createRoom.categories.italian')},
       ],
       category: null,
-      desription: ''
+      desription: '',
+      roomUrl: '',
+      inviteUrl: ''
     }
   },
   methods: {
@@ -37,7 +55,8 @@ export default {
       let {
         data: {
           links: {
-            gui: roomUrl
+            gui: roomUrl,
+            guest_join: inviteUrl
           }
         }
       } = await this.$axios.post('/rooms', qs.stringify({
@@ -46,7 +65,14 @@ export default {
         }
       }));
 
-      window.open(roomUrl, '_blank');
+      this.roomUrl = roomUrl;
+      this.inviteUrl = inviteUrl;
+    },
+    openRoom: function(event) {
+      window.open(this.roomUrl, '_blank');
+    },
+    copyRoom: function(event) {
+      copyToClipboard(this.inviteUrl);
     }
   }
 }
