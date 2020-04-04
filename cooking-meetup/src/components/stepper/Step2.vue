@@ -12,17 +12,17 @@
         <q-stepper-navigation class="row">
           <div class="col">
             <q-btn
-              @click="step = 3"
+              @click="updateStep(3)"
               color="secondary"
-              :label="$t('stepper.buttons.continue')"
+              :label="$t('buttons.continue')"
             />
           </div>
           <div class="col">
             <q-btn
               flat
-              @click="step = 1"
+              @click="updateStep(1)"
               color="secondary"
-              :label="$t('stepper.buttons.back')"
+              :label="$t('buttons.back')"
               class="q-ml-sm"
             />
           </div>
@@ -37,19 +37,22 @@ export default {
   props: {
     step: {
       type: Number,
-      required: true,
       default: 1
     },
     peopleGroup: {
       type: String,
-      required: true,
       default: 'friends'
     },
     chefWanted: {
       type: Boolean,
-      required: true,
       default: false
     },
+  },
+  methods: {
+    updateStep(step){
+        this.step = step;
+        this.$emit('stepChanged', this.step);
+    }
   }
 };
 

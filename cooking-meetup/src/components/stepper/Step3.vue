@@ -35,9 +35,9 @@
           <div class="col">
             <q-btn
               flat
-              @click="step = 2"
+              @click="updateStep(2)"
               color="secondary"
-              :label="$t('stepper.buttons.back')"
+              :label="$t('buttons.back')"
               class="q-ml-sm"
             />
           </div>
@@ -52,13 +52,17 @@ export default {
   props: {
     step: {
       type: Number,
-      required: true,
       default: 1
     },
     topics: {
       type: Array,
-      required: true,
       default: () => [{ title: "leaf_to_root" }, { title: "urban_agriculture" }]
+    }
+  },
+  methods: {
+    updateStep(step){
+        this.step = step;
+        this.$emit('stepChanged', this.step);
     }
   }
 };

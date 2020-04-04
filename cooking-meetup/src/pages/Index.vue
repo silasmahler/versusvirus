@@ -54,8 +54,14 @@ export default {
   components: { JoinStepper, CreateRoom, Calendar },
   data () {
     return {
-      tab: "join"
-    };
+      tab: 'join'
+    }
+  },
+  mounted() {
+    this.authenticated = isAuthenticated();
+    if(!this.authenticated) {
+      this.$router.push({ path: "login" });
+    }
   }
 };
 </script>

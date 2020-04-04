@@ -1,6 +1,3 @@
-// This is just an example,
-// so you can safely delete all default props below
-
 export default {
   nav: {
     title: 's'
@@ -36,10 +33,13 @@ export default {
       urban_agriculture: 'Urban Agriculture',
       urban_agriculture_desc: 'The city is a conurbation and focal point of consumption. However, many foodstuffs are still produced in the countryside. But there are other ways. Urban Agriculture is committed to a diverse flora and fauna, also and especially in urban settlement areas.'
     },
-    buttons: {
-      continue: 'Continue',
-      back: 'Back'
-    },
+  },
+  buttons: {
+    continue: 'Continue',
+    back: 'Back',
+    save: 'Save',
+    login: 'Login',
+    logout: 'Logout',
   },
   tabs: {
     join: {
@@ -70,11 +70,30 @@ export default {
     openButton: 'Open Room',
     copyButton: 'Copy Room URL'
   },
+  login: {
+    username: 'Username',
+    password: 'Password',
+    error: 'Either username or password are wrong'
+  },
   profile: {
     name: 'Name',
     vitae: 'Vitae',
     niche: 'Niche',
-    devices: 'Devices'
+    devices: {
+      title: 'Devices',
+      smartphone: {
+        label: 'Smartphone',
+        hint: 'Hint for Smartphones'
+      },
+      notebook: {
+        label: 'Notebook',
+        hint: 'Hint for Notebooks'
+      },
+      camera: {
+        label: 'Camera',
+        hint: 'Hint for Cameras'
+      }
+    }
   },
   menu: {
     profile: 'Profile'
