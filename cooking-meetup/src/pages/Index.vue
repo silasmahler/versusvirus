@@ -41,13 +41,20 @@
 <script>
 import JoinStepper from "../components/stepper/JoinStepper";
 import CreateRoom from "../components/CreateRoom";
+import {isAuthenticated} from "../services/storage-service";
 export default {
   name: "PageIndex",
   components: { JoinStepper, CreateRoom },
   data() {
     return {
-      tab: "join"
-    };
+      tab: 'join'
+    }
+  },
+  mounted() {
+    this.authenticated = isAuthenticated();
+    if(!this.authenticated) {
+      this.$router.push({ path: "login" });
+    }
   }
 };
 </script>

@@ -14,7 +14,7 @@
             <q-btn
               @click="step = 3"
               color="secondary"
-              :label="$t('stepper.buttons.continue')"
+              :label="$t('buttons.continue')"
             />
           </div>
           <div class="col">
@@ -22,7 +22,7 @@
               flat
               @click="step = 1"
               color="secondary"
-              :label="$t('stepper.buttons.back')"
+              :label="$t('buttons.back')"
               class="q-ml-sm"
             />
           </div>
