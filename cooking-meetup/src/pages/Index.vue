@@ -17,6 +17,11 @@
         <div class="text-h4">{{ $t('tabs.create.title') }}</div>
         <CreateRoom />
       </q-tab-panel>
+
+      <q-tab-panel name="calendar" animated>
+        <div class="text-h4">{{ $t('tabs.calendar.title') }}</div>
+        <Calendar />
+      </q-tab-panel>
     </q-tab-panels>
 
     <q-footer>
@@ -32,6 +37,7 @@
         >
           <q-tab name="join" :label="$t('tabs.join.tabTitle')"></q-tab>
           <q-tab name="create" :label="$t('tabs.create.tabTitle')"></q-tab>
+           <q-tab name="calendar" :label="$t('tabs.calendar.tabTitle')"></q-tab>
         </q-tabs>
       </q-toolbar>
     </q-footer>
@@ -41,10 +47,12 @@
 <script>
 import JoinStepper from "../components/stepper/JoinStepper";
 import CreateRoom from "../components/CreateRoom";
+import {isAuthenticated} from "../services/storage-service";
+import Calendar from "../components/Calendar";
 export default {
   name: "PageIndex",
-  components: { JoinStepper, CreateRoom },
-  data() {
+  components: { JoinStepper, CreateRoom, Calendar },
+  data () {
     return {
       tab: "join"
     };

@@ -49,6 +49,10 @@ export default {
     create: {
       title: 'Create a room',
       tabTitle: 'Create room'
+    },
+    calendar: {
+      title: 'Calendar',
+      tabTitle: 'Calendar'
     }
   },
   createRoom: {
