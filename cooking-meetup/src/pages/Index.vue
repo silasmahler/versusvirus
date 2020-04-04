@@ -1,9 +1,9 @@
 <template>
   <q-page class="flex flex-center">
-    <img alt="Quasar logo" src="~assets/quasar-logo-full.svg" />
+    <Stepper />
     <div class="q-pa-md q-gutter-sm">
-      <q-btn color="white" text-color="black" label="Standard" />
       <q-btn color="primary" label="Primary" />
+      <q-btn color="white" text-color="black" label="Standard" />
       <q-btn color="secondary" label="Secondary" />
       <q-btn color="accent" label="accent" />
       <q-btn color="dark" label="dark" />
@@ -16,7 +16,9 @@
 </template>
 
 <script>
+import Stepper from "../components/Stepper";
 export default {
-  name: "PageIndex"
-};
+  name: 'PageIndex',
+  components: {Stepper}
+}
 </script>
