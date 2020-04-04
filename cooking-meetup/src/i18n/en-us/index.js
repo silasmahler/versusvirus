@@ -55,7 +55,7 @@ export default {
     categorySelect: 'Select a category',
     description: 'Description',
     categories: {
-      vegan: 'vegan',
+      vegan: 'vegan-test',
       traditional: 'traditional'
     }
   },

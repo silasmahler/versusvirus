@@ -1,12 +1,9 @@
 <template>
   <div class="q pa-md">
-    <q-page-container>
-        <q-page padding>
-            <q-input v-model="topic" :label="$t('createRoom.topicName')"></q-input>
-            <q-select v-model="category" :options="categories" :label="$t('createRoom.categorySelect')" />
-            <q-input v-model="description" type="textarea" option-value="id" option-label="$t(`createRoom.categories.${desc}`)"  :label="$t('createRoom.description')" emit-value map-options/>
-        </q-page>
-    </q-page-container>
+    <q-input v-model="topic" :label="$t('createRoom.topicName')"></q-input>
+    <q-select v-model="category" :options="categories" option-value="id" :option-label="$t('createRoom.categories.' + desc)" :label="$t('createRoom.categorySelect')" emit-value map-options />
+    <q-input v-model="description" type="textarea" :label="$t('createRoom.description')"/>
+    {{ category }}
   </div>
 </template>
 
@@ -17,11 +14,11 @@ export default {
     return {
       topic: '',
       categories: [
-        // 'vegan', 'traditional'
+        // {id: 'vegan', desc: $t('createRoom.categories.vegan')},
         {id: 'vegan', desc: 'vegan'},
-        {id: 'traditional', desc: 'traditional'},
+        // {id: 'traditional', desc: $t('createRoom.categories.traditional')},
       ],
-      category: '',
+      category: null,
       desription: ''
     }
   }

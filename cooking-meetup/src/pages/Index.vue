@@ -7,12 +7,18 @@
       </q-tab-panel>
 
       <q-tab-panel name="create" animated>
-      <div class="text-h4">{{ $t('tabs.create.title') }}</div>
+        <div class="text-h4">{{ $t('tabs.create.title') }}</div>
         <CreateRoom />
       </q-tab-panel>
     </q-tab-panels>
 
-    <q-tabs v-model="tab" dense class="text-grey tab-buttons" active-color="primary" indicator-color="primary" align="justify" narrow-indicator>
+    <q-tabs v-model="tab" 
+            dense 
+            class="text-grey tab-buttons" 
+            active-color="accent" 
+            indicator-color="accent" 
+            align="justify" 
+            narrow-indicator>
       <q-tab name="join" :label="$t('tabs.join.tabTitle')"></q-tab>
       <q-tab name="create" :label="$t('tabs.create.tabTitle')"></q-tab>
     </q-tabs>
