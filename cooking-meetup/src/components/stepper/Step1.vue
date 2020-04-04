@@ -10,24 +10,16 @@
         <q-stepper-navigation class="row">
           <div class="col">
             <q-btn
-              @click="
-                () => {
-                  step = 2;
-                  peopleGroup = 'friends';
-                }
-              "
+              @click="updateStepAndGroup(2, 'friends')"
               color="secondary"
               :label="$t('stepper.people.friends')"
             />
           </div>
+                       {{step}}
+
           <div class="col">
             <q-btn
-              @click="
-                () => {
-                  step = 3;
-                  peopleGroup = 'strangers';
-                }
-              "
+              @click="updateStepAndGroup(3, 'strangers')"
               color="secondary"
               :label="$t('stepper.people.strangers')"
             />
@@ -43,15 +35,23 @@ export default {
   props: {
     step: {
       type: Number,
-      required: true,
       default: 1
     },
     peopleGroup: {
       type: String,
-      required: true,
       default: 'friends'
     },
+  },
+  methods:{
+    updateStepAndGroup(step, group){
+         this.step = step;
+         this.peopleGroup = group;
+         this.$emit('stepChanged', this.step);
+         this.$emit('peopleGroupChanged', this.peopleGroup);
+
+    }
   }
+
 }
 </script>
 
