@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import JoinStepper from "../components/JoinStepper";
+import JoinStepper from "../components/stepper/JoinStepper";
 import CreateRoom from "../components/CreateRoom";
 export default {
   name: "PageIndex",

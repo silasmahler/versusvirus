@@ -55,9 +55,26 @@ export default {
     categorySelect: 'Select a category',
     description: 'Description',
     categories: {
-      vegan: 'vegan-test',
-      traditional: 'traditional'
+      vegan: 'vegan',
+      traditional: 'traditional',
+      french: 'french',
+      german: 'german',
+      italian: 'italian'
     }
+  },
+  profile: {
+    name: 'Name',
+    vitae: 'Vitae',
+    niche: 'Niche'
+  },
+  menu: {
+    profile: 'Profile'
+  },
+  languages: {
+    english: 'English',
+    french: 'French',
+    german: 'German',
+    italian: 'Italian',
   },
   errorPage: {
     message: 'Sorry, nothing here... 404',

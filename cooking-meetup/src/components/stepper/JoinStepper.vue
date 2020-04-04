@@ -1,6 +1,10 @@
 <template>
   <div class="q-pa-md">
     <q-stepper v-model="step" vertical color="primary" animated>
+      <Step1/>
+      <Step2/>
+      <Step3/>
+
       <q-step
         :name="1"
         :title="$t('stepper.selectPeopleGroup.title')"
@@ -113,8 +117,13 @@
 </template>
 
 <script>
+import { Step1 } from "./Step1.vue";
+import { Step2 } from "./Step2.vue";
+import { Step3 } from "./Step3.vue";
+
 export default {
   name: "JoinStepper",
+  components: { Step1, Step2, Step3 },
   data() {
     return {
       step: 1,
@@ -125,6 +134,3 @@ export default {
   }
 };
 </script>
-
-<style scoped>
-</style>
