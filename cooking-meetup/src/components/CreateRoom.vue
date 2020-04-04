@@ -8,7 +8,7 @@
       <q-btn
         @click="createRoom"
         color="primary"
-        :label="$t('createRoom.create')"
+        :label="$t('createRoom.createButton')"
       />
     </div>
   </div>

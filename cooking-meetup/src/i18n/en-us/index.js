@@ -62,7 +62,7 @@ export default {
       german: 'german',
       italian: 'italian'
     },
-    createButton: 'create room'
+    createButton: 'Create New Room'
   },
   profile: {
     name: 'Name',
