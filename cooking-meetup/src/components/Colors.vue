@@ -13,8 +13,17 @@
 </template>
 
 <script>
+import {isAuthenticated} from "../services/storage-service";
+
 export default {
-    name: "Colors"
+  name: "Colors",
+  mounted() {
+    this.authenticated = isAuthenticated();
+    if(!this.authenticated) {
+      console.log('go to login');
+      this.$router.push({ path: "login" });
+    }
+  }
 }
 </script>
 

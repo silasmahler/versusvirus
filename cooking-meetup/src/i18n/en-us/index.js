@@ -37,7 +37,8 @@ export default {
   buttons: {
     continue: 'Continue',
     back: 'Back',
-    save: 'Save'
+    save: 'Save',
+    login: 'Login'
   },
   tabs: {
     join: {
@@ -63,6 +64,11 @@ export default {
     createButton: 'Create New Room',
     openButton: 'Open Room',
     copyButton: 'Copy Room URL'
+  },
+  login: {
+    username: 'Username',
+    password: 'Password',
+    error: 'Either username or password are wrong'
   },
   profile: {
     name: 'Name',

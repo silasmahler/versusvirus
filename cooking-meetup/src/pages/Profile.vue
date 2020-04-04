@@ -24,7 +24,7 @@
 </template>
 
 <script>
-import {getProfile, setProfile} from "../services/storage-service";
+  import {getProfile, isAuthenticated, setProfile} from "../services/storage-service";
 
 export default {
   name: 'Profile',
@@ -52,6 +52,11 @@ export default {
     }
   },
   mounted() {
+    this.authenticated = isAuthenticated();
+    if(!this.authenticated) {
+      console.log('go to login');
+      this.$router.push({ path: "login" });
+    }
     if (getProfile()) {
       this.profile = getProfile();
       this.recordingDevices.forEach(device => {
