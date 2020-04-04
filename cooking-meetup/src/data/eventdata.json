@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "summary": "VersusVirus Launch Dinner",
+    "description": "Dinner Cooking after launch of VersusVirus Hackathon.",
+    "start": {
+      "dateTime": "2020-04-03T19:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-03T21:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  },
+  {
+    "id": 2,
+    "summary": "VersusVirus Dinner Day 2",
+    "description": "Dinner Cooking on the second evening of VersusVirus Hackathon.",
+    "start": {
+      "dateTime": "2020-04-04T19:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-04T20:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  },
+  {
+    "id": 3,
+    "summary": "Sunday Family Dinner",
+    "description": "My remote family dinner on sunday.",
+    "start": {
+      "dateTime": "2020-04-05T11:30:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-05T13:30:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  },
+  {
+    "id": 4,
+    "summary": "Cooking Lesson #12",
+    "description": "Monday Cooking Lesson by Stephan.",
+    "start": {
+      "dateTime": "2020-04-06T18:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-06T19:30:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  },
+  {
+    "id": 5,
+    "summary": "15 Minute Meals",
+    "description": "Cook 15 Minute Meals with Jamie Oliver.",
+    "start": {
+      "dateTime": "2020-04-07T19:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-07T19:30:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  },
+  {
+    "id": 6,
+    "summary": "Welcome Weekend Pizza",
+    "description": "Weekly Pizza dinner.",
+    "start": {
+      "dateTime": "2020-04-10T18:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-10T21:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  },
+  {
+    "id": 7,
+    "summary": "Cook Together #02",
+    "description": "Customize basic recipes with local ingredients cou have at home.",
+    "start": {
+      "dateTime": "2020-04-11T18:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-10T20:00:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  },
+  {
+    "id": 3,
+    "summary": "Sunday Family Dinner",
+    "description": "My remote family dinner on sunday.",
+    "start": {
+      "dateTime": "2020-04-12T11:30:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "end": {
+      "dateTime": "2020-04-12T13:30:00",
+      "timeZone": "Europe/Berlin"
+    },
+    "color": "positive"
+  }
+]
