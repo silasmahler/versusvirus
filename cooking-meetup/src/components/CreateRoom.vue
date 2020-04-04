@@ -1,16 +1,24 @@
 <template>
   <div class="q pa-md">
-    <q-input v-model="topic" :label="$t('createRoom.topicName')"></q-input>
+    <q-input v-model="topic" :label="$t('createRoom.topicName')" :rules="[val => !!val || 'Field is required']"></q-input>
     <q-select v-model="category" :options="categories" :label="$t('createRoom.categorySelect')" emit-value map-options />
     <q-input v-model="description" type="textarea" :label="$t('createRoom.description')"/>
+
+    <div>
+      <q-btn
+        @click="createRoom"
+        color="primary"
+        :label="$t('createRoom.create')"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-
+import qs from 'qs';
 export default {
-    name: 'CreateRoom',
-    data () {
+  name: 'CreateRoom',
+  data () {
     return {
       topic: '',
       categories: [
@@ -22,6 +30,23 @@ export default {
       ],
       category: null,
       desription: ''
+    }
+  },
+  methods: {
+    createRoom: async function(event) {
+      let {
+        data: {
+          links: {
+            gui: roomUrl
+          }
+        }
+      } = await this.$axios.post('/rooms', qs.stringify({
+        user: {
+          name: this.topic
+        }
+      }));
+
+      window.open(roomUrl, '_blank');
     }
   }
 }

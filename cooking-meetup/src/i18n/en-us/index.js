@@ -61,7 +61,8 @@ export default {
       french: 'french',
       german: 'german',
       italian: 'italian'
-    }
+    },
+    createButton: 'create room'
   },
   profile: {
     name: 'Name',
