@@ -35,10 +35,20 @@
 export default {
   name: "Step2",
   props: {
+    step: {
+      type: Number,
+      required: true,
+      default: 1
+    },
     peopleGroup: {
       type: String,
       required: true,
       default: 'friends'
+    },
+    chefWanted: {
+      type: Boolean,
+      required: true,
+      default: false
     },
   }
 };

@@ -61,7 +61,10 @@ export default {
       french: 'french',
       german: 'german',
       italian: 'italian'
-    }
+    },
+    createButton: 'Create New Room',
+    openButton: 'Open Room',
+    copyButton: 'Copy Room URL'
   },
   profile: {
     name: 'Name',

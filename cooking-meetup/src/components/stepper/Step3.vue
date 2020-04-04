@@ -50,6 +50,11 @@
 export default {
   name: "Step3",
   props: {
+    step: {
+      type: Number,
+      required: true,
+      default: 1
+    },
     topics: {
       type: Array,
       required: true,

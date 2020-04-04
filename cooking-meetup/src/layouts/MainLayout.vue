@@ -7,7 +7,7 @@
         </q-avatar>
 
         <q-toolbar-title>
-          <router-link to="/" class="toolbar-title-link">Cooking Meetup</router-link>
+          <router-link to="/" class="toolbar-title-link">Dinner Party</router-link>
         </q-toolbar-title>
 
         <q-space />

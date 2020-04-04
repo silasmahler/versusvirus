@@ -46,6 +46,11 @@ export default {
       required: true,
       default: 1
     },
+    peopleGroup: {
+      type: String,
+      required: true,
+      default: 'friends'
+    },
   }
 }
 </script>
