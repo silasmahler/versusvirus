@@ -4,7 +4,7 @@ export function getProfile() {
 
 export function setProfile(profile) {
   const user = getCurrentUser();
-  user.prfile = profile;
+  user.profile = profile;
   localStorage.setItem('currentUser', JSON.stringify(user));
 }
 
@@ -13,7 +13,6 @@ export function login(username, password) {
   data.forEach(user => {
     if (user.username === username) {
       if (user.password === password) {
-        console.log('login successful');
         localStorage.setItem('currentUser', JSON.stringify(user));
         authenticated = true;
       }

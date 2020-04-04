@@ -17,7 +17,6 @@ export default {
   mounted() {
     this.authenticated = isAuthenticated();
     if(!this.authenticated) {
-      console.log('go to login');
       this.$router.push({ path: "login" });
     }
   }

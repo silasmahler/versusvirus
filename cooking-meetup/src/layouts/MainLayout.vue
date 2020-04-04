@@ -18,7 +18,9 @@
               <EssentialLink v-for="link in menu" :key="link.title" v-bind="link" />
               <q-seperator />
               <q-item clickable v-close-popup>
-                <q-item-section>Logout</q-item-section>
+                <q-item-section>
+                  <q-btn flat dense @click="logout" :label="$t('buttons.logout')"/>
+                </q-item-section>
               </q-item>
             </q-list>
           </q-menu>
@@ -62,6 +64,7 @@ export default {
   methods: {
     logout: function () {
       logout();
+      this.$router.push({ path: '/login' });
     }
   }
 };

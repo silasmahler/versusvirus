@@ -33,10 +33,8 @@ export default {
       this.error = false;
       let authenticated = login(this.form.username, this.form.password);
       if (authenticated) {
-        console.log('authenticate');
         this.$router.push({ path: '/' });
       } else {
-        console.log('error');
         this.error = true;
       }
     }
