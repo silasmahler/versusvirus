@@ -2,28 +2,29 @@
   <q-page>
     <q-tab-panels v-model="tab" animated>
       <q-tab-panel name="join">
-        <div class="text-h4">{{ $t('tabs.join') }}</div>
+        <div class="text-h4">{{ $t('tabs.join.title') }}</div>
         <JoinStepper />
       </q-tab-panel>
 
       <q-tab-panel name="create" animated>
-      <div class="text-h4">Mails</div>
-        Create Room
+      <div class="text-h4">{{ $t('tabs.create.title') }}</div>
+        <CreateRoom />
       </q-tab-panel>
     </q-tab-panels>
 
     <q-tabs v-model="tab" dense class="text-grey tab-buttons" active-color="primary" indicator-color="primary" align="justify" narrow-indicator>
-      <q-tab name="join" label="Join Room"></q-tab>
-      <q-tab name="create" label="Create Room"></q-tab>
+      <q-tab name="join" :label="$t('tabs.join.tabTitle')"></q-tab>
+      <q-tab name="create" :label="$t('tabs.create.tabTitle')"></q-tab>
     </q-tabs>
   </q-page>
 </template>
 
 <script>
 import JoinStepper from "../components/JoinStepper";
+import CreateRoom from "../components/CreateRoom";
 export default {
   name: "PageIndex",
-  components: { JoinStepper },
+  components: { JoinStepper, CreateRoom },
   data () {
     return {
       tab: 'join'

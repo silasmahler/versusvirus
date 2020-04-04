@@ -43,7 +43,20 @@ export default {
   tabs: {
     join: {
       title: 'Join a room',
-      tab
+      tabTitle: 'Join room'
+    },
+    create: {
+      title: 'Create a room',
+      tabTitle: 'Create room'
+    }
+  },
+  createRoom: {
+    topicName: 'Topic name',
+    categorySelect: 'Select a category',
+    description: 'Description',
+    categories: {
+      vegan: 'vegan',
+      traditional: 'traditional'
     }
   },
   errorPage: {
