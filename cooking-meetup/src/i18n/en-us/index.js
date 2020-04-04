@@ -65,7 +65,8 @@ export default {
   profile: {
     name: 'Name',
     vitae: 'Vitae',
-    niche: 'Niche'
+    niche: 'Niche',
+    devices: 'Devices'
   },
   menu: {
     profile: 'Profile'

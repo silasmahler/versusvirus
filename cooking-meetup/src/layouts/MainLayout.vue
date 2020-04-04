@@ -64,7 +64,12 @@ export default {
         {
           title: 'Profile',
           icon: 'school',
-          link: '/profile'
+          link: '#/profile'
+        },
+        {
+          title: 'Colors',
+          icon: 'school',
+          link: '#/colors'
         }
       ]
     }
