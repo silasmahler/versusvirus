@@ -17,7 +17,7 @@
                   peopleGroup = 'friends';
                 }
               "
-              color="primary"
+              color="secondary"
               :label="$t('stepper.people.friends')"
             />
           </div>
@@ -29,7 +29,7 @@
                   peopleGroup = 'strangers';
                 }
               "
-              color="primary"
+              color="secondary"
               :label="$t('stepper.people.strangers')"
             />
           </div>
@@ -43,13 +43,13 @@
         :done="step > 2 && peopleGroup === 'friends'"
       >
         {{ $t("stepper.chefWanted.text") }}<br />
-        <q-checkbox v-model="chefWanted" />
+        <q-checkbox color="info" v-model="chefWanted" />
 
         <q-stepper-navigation class="row">
           <div class="col">
             <q-btn
               @click="step = 3"
-              color="primary"
+              color="secondary"
               :label="$t('stepper.buttons.continue')"
             />
           </div>
@@ -57,7 +57,7 @@
             <q-btn
               flat
               @click="step = 1"
-              color="primary"
+              color="secondary"
               :label="$t('stepper.buttons.back')"
               class="q-ml-sm"
             />
@@ -101,7 +101,7 @@
             <q-btn
               flat
               @click="step = 2"
-              color="primary"
+              color="secondary"
               :label="$t('stepper.buttons.back')"
               class="q-ml-sm"
             />

@@ -12,16 +12,22 @@
       </q-tab-panel>
     </q-tab-panels>
 
-    <q-tabs v-model="tab" 
+      <q-footer>
+        <q-toolbar class="bg-white">
+         <q-tabs v-model="tab" 
             dense 
-            class="text-grey tab-buttons" 
+            class="bg-white text-grey tab-buttons" 
             active-color="accent" 
             indicator-color="accent" 
             align="justify" 
             narrow-indicator>
-      <q-tab name="join" :label="$t('tabs.join.tabTitle')"></q-tab>
-      <q-tab name="create" :label="$t('tabs.create.tabTitle')"></q-tab>
-    </q-tabs>
+           <q-tab name="join" :label="$t('tabs.join.tabTitle')"></q-tab>
+           <q-tab name="create" :label="$t('tabs.create.tabTitle')"></q-tab>
+         </q-tabs>
+        </q-toolbar>
+      </q-footer>
+
+   
   </q-page>
 </template>
 

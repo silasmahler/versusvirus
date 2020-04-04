@@ -1,7 +1,10 @@
 <template>
   <div class="q pa-md">
     <q-input v-model="topic" :label="$t('createRoom.topicName')"></q-input>
-    <q-select v-model="category" :options="categories" option-value="id" :option-label="$t('createRoom.categories.' + desc)" :label="$t('createRoom.categorySelect')" emit-value map-options />
+    <q-select v-model="category" :options="categories" 
+                                 :option-value="id" 
+                                 :option-label="$t('createRoom.categories.' + desc)" 
+                                 :label="$t('createRoom.categorySelect')" emit-value map-options />
     <q-input v-model="description" type="textarea" :label="$t('createRoom.description')"/>
     {{ category }}
   </div>
