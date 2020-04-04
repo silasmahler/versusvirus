@@ -37,7 +37,7 @@
               flat
               @click="step = 2"
               color="secondary"
-              :label="$t('stepper.buttons.back')"
+              :label="$t('buttons.back')"
               class="q-ml-sm"
             />
           </div>
