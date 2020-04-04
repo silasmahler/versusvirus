@@ -1,6 +1,6 @@
-# Cooking against the virus (cooking-meetup)
+# Cooking Meetup (cooking-meetup)
 
-Collab-Cooking
+Cooking Meetup
 
 ## Install the dependencies
 ```bash

@@ -13,7 +13,7 @@ module.exports = function (ctx) {
 
     // https://quasar.dev/quasar-cli/quasar-conf-js#Property%3A-css
     css: [
-      'app.scss'
+      'app.sass'
     ],
 
     // https://github.com/quasarframework/quasar/tree/dev/extras
@@ -102,9 +102,9 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Cooking against the virus',
-        short_name: 'Cooking against the virus',
-        description: 'Collab-Cooking',
+        name: 'Cooking Meetup',
+        short_name: 'Cooking Meetup',
+        description: 'Cooking Meetup',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
