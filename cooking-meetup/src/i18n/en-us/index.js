@@ -22,6 +22,8 @@ export default {
       title: 'Choose topics',
       text: 'Select a topic of your choice',
 
+      start_session: 'Start session!',
+
       categories: {
         vegetarian: 'Vegetarian',
         vegan: 'Vegan'

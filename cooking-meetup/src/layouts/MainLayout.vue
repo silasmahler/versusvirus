@@ -12,10 +12,9 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Cooking Meetup
         </q-toolbar-title>
 
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
