@@ -15,8 +15,6 @@
               :label="$t('stepper.people.friends')"
             />
           </div>
-                       {{step}}
-
           <div class="col">
             <q-btn
               @click="updateStepAndGroup(3, 'strangers')"
