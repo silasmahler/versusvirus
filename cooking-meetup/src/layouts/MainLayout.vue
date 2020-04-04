@@ -2,6 +2,10 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
       <q-toolbar>
+        <q-avatar>
+          <img src="../assets/FORKnKNIFE.png" />
+        </q-avatar>
+
         <q-toolbar-title>
           <router-link to="/" class="toolbar-title-link">Cooking Meetup</router-link>
         </q-toolbar-title>
