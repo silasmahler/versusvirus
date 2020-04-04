@@ -1,18 +1,16 @@
 <template>
   <div class="q-pa-md">
     <q-stepper v-model="step" vertical color="primary" animated>
-      <q-step :name="1" title="Select campaign settings" icon="settings" :done="step > 1">
-        For each ad campaign that you create, you can control how much you're willing to
-        spend on clicks and conversions, which networks and geographical locations you want
-        your ads to show on, and more.
-
+      <q-step :name="1" :title="$t('selectPeopleGroup.title')" icon="settings" :done="step > 1">
+        {{ $t('stepper.selectPeopleGroup.text') }}
         <q-stepper-navigation>
-          <q-btn @click="step = 2" color="primary" label="Continue" />
+          <q-btn @click="() => {step = 2; peopleGroup = 'friends'}" color="primary" :label="$t('stepper.people.friends')" />
+          <q-btn @click="() => {step = 4; peopleGroup = 'strangers'}" color="primary" :label="$t('stepper.people.strangers')" />
         </q-stepper-navigation>
       </q-step>
 
       <q-step :name="2" title="Create an ad group" caption="Optional" icon="create_new_folder" :done="step > 2">
-        An ad group contains one or more ads which target a shared set of keywords.
+        {{ $t('stepper.cookWanted.text') }}
 
         <q-stepper-navigation>
           <q-btn @click="step = 4" color="primary" label="Continue" />
@@ -35,6 +33,10 @@
         </q-stepper-navigation>
       </q-step>
     </q-stepper>
+    <div>
+      {{ step }}
+      {{ peopleGroup }}
+    </div>
   </div>
 </template>
 
@@ -43,7 +45,9 @@
         name: "Stepper",
         data () {
             return {
-              step: 1
+              step: 1,
+              peopleGroup: 'friends',
+              chefWanted: false,
             }
         }
     }
