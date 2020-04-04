@@ -38,7 +38,8 @@ export default {
     continue: 'Continue',
     back: 'Back',
     save: 'Save',
-    login: 'Login'
+    login: 'Login',
+    logout: 'Logout',
   },
   tabs: {
     join: {

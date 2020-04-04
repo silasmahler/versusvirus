@@ -34,14 +34,13 @@
 
 <script>
 import EssentialLink from "components/EssentialLink";
+import {logout} from "../services/storage-service";
 
 export default {
   name: "MainLayout",
-
   components: {
     EssentialLink
   },
-
   data() {
     return {
       languages: ["english", "french", "german", "italian"],
@@ -59,6 +58,11 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    logout: function () {
+      logout();
+    }
   }
 };
 </script>

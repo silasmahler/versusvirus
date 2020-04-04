@@ -1,9 +1,11 @@
 export function getProfile() {
-  return JSON.parse(localStorage.getItem('profile'));
+  return getCurrentUser().profile;
 }
 
 export function setProfile(profile) {
-  localStorage.setItem('profile', JSON.stringify(profile));
+  const user = getCurrentUser();
+  user.prfile = profile;
+  localStorage.setItem('currentUser', JSON.stringify(user));
 }
 
 export function login(username, password) {
@@ -30,9 +32,31 @@ export function logout() {
   }
 }
 
+export function getCurrentUser() {
+  return JSON.parse(localStorage.getItem('currentUser'));
+}
+
+const user = (username, password, role, profile) => {
+  return {
+    username: username,
+    password: password,
+    role: role,
+    profile: profile
+  }
+};
+
+const profile = (name, niche, vitae, recordingDevices) => {
+  return {
+    name: name,
+    niche: niche,
+    vitae: vitae,
+    recordingDevices: recordingDevices
+  }
+};
+
 const data = [
-  {username: 'test1', password: 'test123'},
-  {username: 'test2', password: 'test123'},
-  {username: 'test3', password: 'test123'},
-  {username: 'test4', password: 'test123'}
+  user('test1', 'test123', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'])),
+  user('test2', 'test123', 'user', profile('Test 2', 'traditional', 'TODO', ['camera', 'notebook'])),
+  user('test3', 'test123', 'user', profile('Test 3', 'italian', 'TODO', ['notebook'])),
+  user('test4', 'test123', 'chef', profile('Test 4', 'french', 'TODO', ['smartphone']))
 ];

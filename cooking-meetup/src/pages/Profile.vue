@@ -56,16 +56,26 @@ export default {
     if(!this.authenticated) {
       console.log('go to login');
       this.$router.push({ path: "login" });
-    }
-    if (getProfile()) {
-      this.profile = getProfile();
-      this.recordingDevices.forEach(device => {
-        if (this.profile.recordingDevices.includes(device.value)) {
-          device.active = true;
-        }
-      });
-      this.profile.recordingDevices = [];
-      console.log(this.profile);
+    } else {
+      if (getProfile()) {
+        this.profile = getProfile();
+        this.recordingDevices.forEach(device => {
+          let contains = false;
+          this.profile.recordingDevices.forEach(d => {
+            console.log(d);
+            if (d === device.value) {
+              contains = true;
+              console.log('device found')
+            }
+          });
+          if (this.profile.recordingDevices.includes(device.value)) {
+            device.active = true;
+          }
+          console.log(device.value + ', ' + device.active + '; ' + this.profile.recordingDevices);
+        });
+        console.log(this.recordingDevices);
+        this.profile.recordingDevices = [];
+      }
     }
   }
 }
