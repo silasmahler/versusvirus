@@ -54,6 +54,7 @@ const profile = (name, niche, vitae, recordingDevices) => {
 };
 
 const data = [
+  user('test', 'test', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'])),
   user('test1', 'test123', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'])),
   user('test2', 'test123', 'user', profile('Test 2', 'traditional', 'TODO', ['camera', 'notebook'])),
   user('test3', 'test123', 'user', profile('Test 3', 'italian', 'TODO', ['notebook'])),
