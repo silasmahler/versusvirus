@@ -1,5 +1,17 @@
 <template>
   <div class="q-pa-md">
+     <div class="col-6">
+        <q-img src="../assets/unsplash/dinner-party-friends.jpg" 
+               native-context-menu
+               style="height: 270px;"
+        >
+          <div class="absolute-top text-center">
+            <div class="text-h3">{{ $t('tabs.create.title') }}</div>
+          </div>
+        </q-img>
+      </div>
+      <q-img src=""
+       />
     <div class="q-gutter-md">
         <q-input v-model="topic" :label="$t('createRoom.topicName')" :rules="[val => !!val || 'Field is required']"></q-input>
         <q-select v-model="category" :options="categories" :label="$t('createRoom.categorySelect')" emit-value map-options />
