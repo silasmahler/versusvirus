@@ -108,10 +108,8 @@ export default {
       this.$router.push({ path: "/login" });
     }
   },
-  mounted() {
-    if (isAuthenticated()) {
-      this.profile = getCurrentUser().profile;
-    }
+  beforeUpdate() {
+    this.profile = getCurrentUser().profile;
   }
 };
 </script>
