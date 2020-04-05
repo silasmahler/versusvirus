@@ -5,7 +5,7 @@ export default {
 
   stepper: {
     selectPeopleGroup: {
-      title: 'Select cooking mates',
+      title: 'Koch-Partner auswählen',
       text: 'Please select whether you want to cook with friends or strangers:',
     },
     people: {

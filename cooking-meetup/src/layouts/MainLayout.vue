@@ -12,6 +12,8 @@
 
         <q-space />
 
+        <q-select v-model="lang" :options="langOptions" :label="$t('languages.chooseLanguage')" dense emit-value map-options options-dense class="language-choose"/>
+
         <q-btn flat round dense icon="more_vert">
           <q-menu>
             <q-list style="min-width: 100px">
@@ -45,8 +47,13 @@ export default {
   },
   data() {
     return {
-      languages: ["english", "french", "german", "italian"],
-      leftDrawerOpen: false,
+      lang: this.$i18n.locale,
+      langOptions: [
+        { value: 'en-us', label: this.$i18n.t('languages.english') },
+        { value: 'fr', label: this.$i18n.t('languages.french') },
+        { value: 'de', label: this.$i18n.t('languages.german') },
+        { value: 'it', label: this.$i18n.t('languages.italian') },
+      ],
       menu: [
         {
           title: "Profile",
@@ -61,6 +68,11 @@ export default {
       ]
     };
   },
+  watch: {
+    lang(lang) {
+      this.$i18n.locale = lang
+    }
+  },
   methods: {
     logout: function () {
       logout();
@@ -69,3 +81,9 @@ export default {
   }
 };
 </script>
+
+<style scoped>
+  .language-choose {
+    width: 10rem;
+  }
+</style>
