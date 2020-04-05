@@ -61,19 +61,44 @@
 </template>
 
 <script>
-import { isAuthenticated } from "../services/storage-service";
+  import {isAuthenticated} from "../services/storage-service";
+  import eyeson from 'eyeson';
+  export default {
+    name: "Room",
+    data() {
+      return {
+        drawer: false,
+        leaveConfirm: false
+      };
+    },
+    methods: {
 
-export default {
-  name: "Room",
-  data() {
-    return {
-      drawer: false,
-      leaveConfirm: false
-    };
-  },
-  methods: {
-    leaveRoom: function() {
-      this.$router.push({ path: "/" });
+      init: function(key) {
+        console.log(key);
+        if (key.length !== ACCESS_KEY_LENGTH) {
+          return;
+        }
+        eyeson.start(key);
+      },
+
+      leaveRoom: function () {
+        this.$router.push({path: "/"});
+      },
+
+
+      handleEvent: function(event) {
+        if (event.type !== 'accept') {
+          console.debug('[App]', 'Ignore received event:', event.type);
+          return;
+      }
+      }
+
+    },
+    mounted() {
+      this.authenticated = isAuthenticated();
+      if (!this.authenticated) {
+        this.$router.push({path: "login"});
+      }
     }
   },
   mounted() {
