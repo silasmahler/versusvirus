@@ -12,7 +12,7 @@
       />
       <q-separator />
       <q-card-actions vertical>
-        <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
+        <q-btn @click="updateClickedJoinARoom()" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
       </q-card-actions>
     </q-card>
   </div>
@@ -23,8 +23,14 @@ export default {
   name: "JoinCard",
   props: {
     clickedJoinARoom: {
-      type: boolean,
+      type: Boolean,
       default: false
+    }
+  },
+  methods: {
+    updateClickedJoinARoom(){
+      this.clickedJoinARoom = true;
+      this.$emit('emitclickedJoinARoom', this.clickedJoinARoom)
     }
   }
 };

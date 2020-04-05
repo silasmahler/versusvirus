@@ -8,7 +8,10 @@
 
       <q-tab-panel name="join">
         <div class="text-h4"></div>
-        <JoinCard v-if="!clickedJoinARoom" />
+        <JoinCard v-if="!clickedJoinARoom" 
+                  :clickedJoinARoom="clickedJoinARoom"
+                  @clickedJoinARoom="clickedJoinARoom = $event"
+        />
         <JoinStepper v-if="clickedJoinARoom" />
       </q-tab-panel>
 
