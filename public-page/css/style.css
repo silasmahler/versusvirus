@@ -2092,3 +2092,16 @@ textarea.form-control {
 .fc-title, .fc-time {
   color: white;
 }
+
+.contact-content {
+  color: white !important;
+  font-size: x-large;
+}
+
+.link-white {
+  color: white !important;
+}
+
+.row-no-margin {
+  margin-bottom: 0 !important;
+}
