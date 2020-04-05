@@ -2105,3 +2105,8 @@ textarea.form-control {
 .row-no-margin {
   margin-bottom: 0 !important;
 }
+
+.title-image {
+  height: 8rem;
+  width: 8rem;
+}
