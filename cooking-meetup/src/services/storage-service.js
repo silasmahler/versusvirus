@@ -1,3 +1,5 @@
+import { LoadingBar } from "quasar";
+
 export function getProfile() {
   return getCurrentUser().profile;
 }
@@ -44,11 +46,12 @@ const user = (username, password, role, profile) => {
   };
 };
 
-const profile = (name, niche, vitae, recordingDevices, image) => {
+const profile = (name, niche, vitae, recordingDevices, lang, image) => {
   return {
     name: name,
     niche: niche,
     vitae: vitae,
+    lang: lang,
     recordingDevices: recordingDevices,
     image: image,
   };

@@ -4,11 +4,7 @@
       <div class="col-auto">
         <q-avatar size="200px">
           <q-img :src="profile.image" alt="Test" v-if="profile.image" />
-          <q-img
-            src="../assets/userfotos/placeholder.png"
-            alt="Test"
-            v-if="!profile.image"
-          />
+          <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image" />
         </q-avatar>
       </div>
       <div class="col-1"></div>
@@ -18,21 +14,13 @@
           <p>{{ profile.vitae }}</p>
         </div>
         <div class="text-h6">
-          <q-icon
-            name="restaurant"
-            class="text-primary"
-            style="font-size: 32px;"
-          />
+          <q-icon name="restaurant" class="text-primary" style="font-size: 32px;" />
           {{ profile.niche }}
         </div>
         <div class="text-h6">
           <div v-for="device in recordingDevices" v-bind:key="device.label">
             <div v-if="device.active">
-              <q-icon
-                name="check"
-                class="text-primary"
-                style="font-size: 32px;"
-              />
+              <q-icon name="check" class="text-primary" style="font-size: 32px;" />
               {{ device.label }}
             </div>
           </div>
@@ -42,12 +30,18 @@
 
     <div class="q pa-md">
       <q-input v-model="profile.name" :label="$t('profile.name')" />
-      <q-input
-        v-model="profile.vitae"
-        type="textarea"
-        :label="$t('profile.vitae')"
-      />
+      <q-input v-model="profile.vitae" type="textarea" :label="$t('profile.vitae')" />
       <q-input v-model="profile.niche" :label="$t('profile.niche')" />
+      <q-select
+        v-model="lang"
+        :options="langOptions"
+        :label="$t('languages.chooseLanguage')"
+        dense
+        emit-value
+        map-options
+        options-dense
+        class="language-choose"
+      />
       <div class="q-gutter-sm">
         <q-checkbox
           v-for="device in recordingDevices"
@@ -76,13 +70,21 @@ export default {
   name: "Profile",
   data() {
     return {
+      lang: this.$i18n.locale,
       profile: {
         image: "Alfonds",
         name: "",
         vitae: "",
         niche: "",
+        lang: this.lang,
         recordingDevices: []
       },
+      langOptions: [
+        { value: "en-us", label: this.$i18n.t("languages.english") },
+        { value: "fr", label: this.$i18n.t("languages.french") },
+        { value: "de", label: this.$i18n.t("languages.german") },
+        { value: "it", label: this.$i18n.t("languages.italian") }
+      ],
       recordingDevices: [
         {
           value: "smartphone",
@@ -104,6 +106,11 @@ export default {
         }
       ]
     };
+  },
+  watch: {
+    lang(lang) {
+      this.$i18n.locale = lang;
+    }
   },
   methods: {
     save: function() {

@@ -6,16 +6,13 @@
       icon="create_new_folder"
       :done="step > 2 && peopleGroup === 'friends'"
     >
-      {{ $t("stepper.chefWanted.text") }}<br />
-      <q-checkbox color="positive" v-model="chefWanted" />
+      {{ $t("stepper.chefWanted.text") }}
+      <br />
+      <q-checkbox color="accent" v-model="chefWanted" />
 
       <q-stepper-navigation class="row">
         <div class="col">
-          <q-btn
-            @click="updateStep(3)"
-            color="accent"
-            :label="$t('buttons.continue')"
-          />
+          <q-btn @click="updateStep(3)" color="accent" :label="$t('buttons.continue')" />
         </div>
         <div class="col">
           <q-btn
