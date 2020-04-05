@@ -74,6 +74,7 @@
     methods: {
 
       init: function(key) {
+        eyeson.onEvent(this.handleEvent);
         eyeson.start(key);
       },
 
@@ -89,6 +90,10 @@
       }
       }
 
+        let video = document.querySelector("video");
+        video.srcObject = event.remoteStream;
+        video.play();
+      }
     },
     mounted() {
       this.authenticated = isAuthenticated();
