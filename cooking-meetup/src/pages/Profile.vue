@@ -1,5 +1,9 @@
 <template>
   <q-page class="q-pa-md">
+    <q-avatar size="200px">
+      <q-img :src="profile.image" alt="Test" v-if="profile.image"/>
+      <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image"/>
+    </q-avatar>
     <p>{{$t('profile.name')}}: {{profile.name}}</p>
     <p>{{$t('profile.vitae')}}: {{profile.vitae}}</p>
     <p>{{$t('profile.niche')}}: {{profile.niche}}</p>
@@ -31,6 +35,7 @@ export default {
   data () {
     return {
       profile: {
+        image: '',
         name: '',
         vitae: '',
         niche: '',

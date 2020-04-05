@@ -27,6 +27,14 @@
           class="language-choose"
         />
 
+        <div v-if="profile" class="menu-profile">
+          <q-avatar>
+            <q-img :src="profile.image" alt="Test" v-if="profile.image"/>
+            <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image"/>
+          </q-avatar>
+          {{profile.name}}
+        </div>
+
         <q-btn flat round dense icon="more_vert">
           <q-menu>
             <q-list style="min-width: 100px">
@@ -51,7 +59,7 @@
 
 <script>
 import EssentialLink from "components/EssentialLink";
-import { logout } from "../services/storage-service";
+import {getCurrentUser, isAuthenticated, logout} from "../services/storage-service";
 
 export default {
   name: "MainLayout",
@@ -68,7 +76,7 @@ export default {
         { value: "it", label: this.$i18n.t("languages.italian") }
       ],
       showLogo: true,
-      languages: ["english", "french", "german", "italian"],
+      profile: null,
       leftDrawerOpen: false,
       menu: [
         {
@@ -94,11 +102,19 @@ export default {
       logout();
       this.$router.push({ path: "/login" });
     }
+  },
+  mounted() {
+    if (isAuthenticated()) {
+      this.profile = getCurrentUser().profile;
+    }
   }
 };
 </script>
 
 <style scoped>
+.menu-profile {
+  margin: 0 10px;
+}
 .language-choose {
   width: 10rem;
 }
