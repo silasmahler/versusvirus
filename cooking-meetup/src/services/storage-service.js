@@ -44,19 +44,20 @@ const user = (username, password, role, profile) => {
   }
 };
 
-const profile = (name, niche, vitae, recordingDevices) => {
+const profile = (name, niche, vitae, recordingDevices, image) => {
   return {
     name: name,
     niche: niche,
     vitae: vitae,
-    recordingDevices: recordingDevices
+    recordingDevices: recordingDevices,
+    image: image
   }
 };
 
 const data = [
   user('test', 'test', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'])),
-  user('test1', 'test123', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'])),
-  user('test2', 'test123', 'user', profile('Test 2', 'traditional', 'TODO', ['camera', 'notebook'])),
-  user('test3', 'test123', 'user', profile('Test 3', 'italian', 'TODO', ['notebook'])),
-  user('test4', 'test123', 'chef', profile('Test 4', 'french', 'TODO', ['smartphone']))
+  user('test1', 'test123', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'], 'img/test1.png')),
+  user('test2', 'test123', 'user', profile('Test 2', 'traditional', 'TODO', ['camera', 'notebook'], 'img/test2.png')),
+  user('test3', 'test123', 'user', profile('Test 3', 'italian', 'TODO', ['notebook'], 'img/test3.png')),
+  user('test4', 'test123', 'chef', profile('Test 4', 'french', 'TODO', ['smartphone'], 'img/test4.png'))
 ];
