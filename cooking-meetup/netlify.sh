@@ -1,2 +1,1 @@
-npm install @quasar/cli
-quasar build -m spa
+npm install @quasar/cli && npm i && quasar build -m spa
