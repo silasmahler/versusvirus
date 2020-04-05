@@ -1,13 +1,11 @@
 <template>
-  <div class="q-pa-md items-center column">
-      <div class="col-6">
+  <div class="q-pa-md">
+      <div class="login-content">
         <q-img
           src="../assets/dinner_party_logo.png"
-          spinner-color="white"
+          spinner-color="black"
           style="height: 200px; max-width: 200px"
         />
-      </div>
-      <div class="col-6">
         <q-card class="login-card">
           <q-card-section>
             <q-input v-model="form.username" :label="$t('login.username')" />
@@ -17,7 +15,7 @@
               {{$t('login.error')}}
             </q-banner>
           </q-card-section>
-      
+
         </q-card>
       </div>
    </div>
@@ -57,9 +55,13 @@ export default {
 }
 .login-card {
   width: 30rem;
-  margin-top: 10rem
 }
 .error {
   margin-top: 10px;
+}
+.login-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 </style>
