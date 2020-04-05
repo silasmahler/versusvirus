@@ -78,7 +78,10 @@ export default {
     createRoom: async function(event) {
       let {
         data: {
-          links: { gui: roomUrl, guest_join: inviteUrl }
+          links: {
+            self: roomUrl,
+            guest_join: inviteUrl
+          }
         }
       } = await this.$axios.post(
         "/rooms",
@@ -95,7 +98,10 @@ export default {
       Notify.create("Copied Room-Link to Clipboard!");
     },
     openRoom: function(event) {
-      window.open(this.roomUrl, "_blank");
+      this.$router.push({ path: "/room/" + this.roomUrl.split("/").pop() });
+    },
+    copyRoom: function(event) {
+      copyToClipboard(this.inviteUrl);
     }
   }
 };

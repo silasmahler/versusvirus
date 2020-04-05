@@ -74,10 +74,6 @@
     methods: {
 
       init: function(key) {
-        console.log(key);
-        if (key.length !== ACCESS_KEY_LENGTH) {
-          return;
-        }
         eyeson.start(key);
       },
 
