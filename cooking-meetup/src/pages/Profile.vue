@@ -1,62 +1,100 @@
 <template>
   <q-page class="q-pa-md">
     <q-avatar size="200px">
-      <q-img :src="profile.image" alt="Test" v-if="profile.image"/>
-      <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image"/>
+      <q-img :src="profile.image" alt="Test" v-if="profile.image" />
+      <q-img
+        src="../assets/userfotos/placeholder.png"
+        alt="Test"
+        v-if="!profile.image"
+      />
     </q-avatar>
-    <p>{{$t('profile.name')}}: {{profile.name}}</p>
-    <p>{{$t('profile.vitae')}}: {{profile.vitae}}</p>
-    <p>{{$t('profile.niche')}}: {{profile.niche}}</p>
+    <p>{{ $t("profile.name") }}: {{ profile.name }}</p>
+    <p>{{ $t("profile.vitae") }}: {{ profile.vitae }}</p>
+    <p>{{ $t("profile.niche") }}: {{ profile.niche }}</p>
     <div>
-      {{$t('profile.devices.title')}}:
+      {{ $t("profile.devices.title") }}:
       <div v-for="device in recordingDevices" v-bind:key="device.label">
-        <span v-if="device.active">{{device.hint}}</span>
+        <span v-if="device.active">{{ device.hint }}</span>
       </div>
     </div>
 
     <div class="q pa-md">
       <q-input v-model="profile.name" :label="$t('profile.name')" />
-      <q-input v-model="profile.vitae" type="textarea" :label="$t('profile.vitae')"/>
+      <q-input
+        v-model="profile.vitae"
+        type="textarea"
+        :label="$t('profile.vitae')"
+      />
       <q-input v-model="profile.niche" :label="$t('profile.niche')" />
       <div class="q-gutter-sm">
-        <q-checkbox v-for="device in recordingDevices" v-bind:key="device.label" :name="device.value" v-model="device.active" :label="device.label" />
+        <q-checkbox
+          v-for="device in recordingDevices"
+          v-bind:key="device.label"
+          :name="device.value"
+          v-model="device.active"
+          :label="device.label"
+          color="positive"
+        />
       </div>
     </div>
 
-    <q-btn color="primary" :label="$t('buttons.save')" @click="save" />
+    <q-btn color="positive" :label="$t('buttons.save')" @click="save" />
   </q-page>
 </template>
 
 <script>
-  import {getProfile, isAuthenticated, setProfile} from "../services/storage-service";
+import {
+  getProfile,
+  isAuthenticated,
+  setProfile
+} from "../services/storage-service";
+import { Notify } from "quasar";
 
 export default {
-  name: 'Profile',
-  data () {
+  name: "Profile",
+  data() {
     return {
       profile: {
-        image: 'Alfonds',
-        name: '',
-        vitae: '',
-        niche: '',
+        image: "Alfonds",
+        name: "",
+        vitae: "",
+        niche: "",
         recordingDevices: []
       },
       recordingDevices: [
-        { value: 'smartphone', label: this.$i18n.t('profile.devices.smartphone.label'), hint: this.$i18n.t('profile.devices.smartphone.hint'), active: false},
-        { value: 'camera', label: this.$i18n.t('profile.devices.camera.label'), hint: this.$i18n.t('profile.devices.camera.hint'), active: false},
-        { value: 'notebook', label: this.$i18n.t('profile.devices.notebook.label'), hint: this.$i18n.t('profile.devices.notebook.hint'), active: false},
+        {
+          value: "smartphone",
+          label: this.$i18n.t("profile.devices.smartphone.label"),
+          hint: this.$i18n.t("profile.devices.smartphone.hint"),
+          active: false
+        },
+        {
+          value: "camera",
+          label: this.$i18n.t("profile.devices.camera.label"),
+          hint: this.$i18n.t("profile.devices.camera.hint"),
+          active: false
+        },
+        {
+          value: "notebook",
+          label: this.$i18n.t("profile.devices.notebook.label"),
+          hint: this.$i18n.t("profile.devices.notebook.hint"),
+          active: false
+        }
       ]
-    }
+    };
   },
   methods: {
-    save: function () {
-      this.recordingDevices.filter(device => device.active).forEach(device => this.profile.recordingDevices.push(device.value));
+    save: function() {
+      this.recordingDevices
+        .filter(device => device.active)
+        .forEach(device => this.profile.recordingDevices.push(device.value));
       setProfile(this.profile);
+      Notify.create("Profile updated!");
     }
   },
   mounted() {
     this.authenticated = isAuthenticated();
-    if(!this.authenticated) {
+    if (!this.authenticated) {
       this.$router.push({ path: "login" });
     } else {
       if (getProfile()) {
@@ -70,5 +108,5 @@ export default {
       }
     }
   }
-}
+};
 </script>

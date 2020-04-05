@@ -3,9 +3,10 @@
     <q-tab-panels v-model="tab" animated>
       <!-- JOIN-PANEL -->>
       <q-tab-panel name="join">
-        <JoinCard v-if="!clickedJoinARoom" 
-                  :clickedJoinARoom="clickedJoinARoom"
-                  @emitclickedJoinARoom="clickedJoinARoom = $event"
+        <JoinCard
+          v-if="!clickedJoinARoom"
+          :clickedJoinARoom="clickedJoinARoom"
+          @emitclickedJoinARoom="clickedJoinARoom = $event"
         />
         <JoinStepper v-if="clickedJoinARoom" />
       </q-tab-panel>

@@ -1,22 +1,19 @@
 <template>
   <div class="q-pa-md">
     <q-stepper v-model="step" vertical color="primary" animated>
-      <Step1 :step="step"
-             :peopleGroup="peopleGroup"
-             @stepChanged="step = $event"
-             @peopleGroupChanged="peopleGroup = $event"
-       />
-      <Step2 
-          :step="step"
-          :peopleGroup="peopleGroup"
-          :chefWanted="chefWanted"
-          @stepChanged="step = $event"
+      <Step1
+        :step="step"
+        :peopleGroup="peopleGroup"
+        @stepChanged="step = $event"
+        @peopleGroupChanged="peopleGroup = $event"
       />
-      <Step3
-          :step="step"
-          :topics="topics"
-          @stepChanged="step = $event"
+      <Step2
+        :step="step"
+        :peopleGroup="peopleGroup"
+        :chefWanted="chefWanted"
+        @stepChanged="step = $event"
       />
+      <Step3 :step="step" :topics="topics" @stepChanged="step = $event" />
     </q-stepper>
   </div>
 </template>

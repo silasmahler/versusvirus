@@ -7,7 +7,9 @@
         </q-avatar>
 
         <q-toolbar-title>
-          <router-link to="/" class="toolbar-title-link">Dinner Party</router-link>
+          <router-link to="/" class="toolbar-title-link"
+            >Dinner Party</router-link
+          >
         </q-toolbar-title>
 
         <q-space />
@@ -29,17 +31,25 @@
 
         <q-btn flat dense v-if="profile" class="menu-profile">
           <q-avatar>
-            <q-img :src="profile.image" alt="Test" v-if="profile.image"/>
-            <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image"/>
+            <q-img :src="profile.image" alt="Test" v-if="profile.image" />
+            <q-img
+              src="../assets/userfotos/placeholder.png"
+              alt="Test"
+              v-if="!profile.image"
+            />
           </q-avatar>
           &nbsp;
-          {{profile.name}}
+          {{ profile.name }}
           <q-menu>
             <q-list style="min-width: 100px">
-              <EssentialLink v-for="link in menu" :key="link.title" v-bind="link" />
+              <EssentialLink
+                v-for="link in menu"
+                :key="link.title"
+                v-bind="link"
+              />
               <q-seperator />
               <q-item clickable v-close-popup tag="btn" @click="logout">
-                {{$t('buttons.logout')}}
+                {{ $t("buttons.logout") }}
               </q-item>
             </q-list>
           </q-menu>
@@ -48,11 +58,20 @@
         <q-btn v-if="!profile" flat round dense icon="more_vert">
           <q-menu>
             <q-list style="min-width: 100px">
-              <EssentialLink v-for="link in menu" :key="link.title" v-bind="link" />
+              <EssentialLink
+                v-for="link in menu"
+                :key="link.title"
+                v-bind="link"
+              />
               <q-seperator />
               <q-item clickable v-close-popup>
                 <q-item-section>
-                  <q-btn flat dense @click="login" :label="$t('buttons.login')" />
+                  <q-btn
+                    flat
+                    dense
+                    @click="login"
+                    :label="$t('buttons.login')"
+                  />
                 </q-item-section>
               </q-item>
             </q-list>
@@ -69,7 +88,11 @@
 
 <script>
 import EssentialLink from "components/EssentialLink";
-import {getCurrentUser, isAuthenticated, logout} from "../services/storage-service";
+import {
+  getCurrentUser,
+  isAuthenticated,
+  logout
+} from "../services/storage-service";
 
 export default {
   name: "MainLayout",
@@ -105,7 +128,7 @@ export default {
   watch: {
     lang(lang) {
       this.$i18n.locale = lang;
-    },
+    }
   },
   methods: {
     logout: function() {
@@ -113,7 +136,7 @@ export default {
       this.profile = null;
       this.$router.push({ path: "/login" });
     },
-    login: function () {
+    login: function() {
       this.$router.push({ path: "/login" });
     }
   },

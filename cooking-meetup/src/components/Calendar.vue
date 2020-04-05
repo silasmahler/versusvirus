@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="text-h4">{{ $t('tabs.calendar.title') }}</div>
+    <div class="text-h4">{{ $t("tabs.calendar.title") }}</div>
     <daykeep-calendar-month
       :start-date="new Date()"
       :event-array="eventData"
@@ -13,20 +13,19 @@
 </template>
 
 <script>
-  import { DaykeepCalendarMonth } from '@daykeep/calendar-quasar';
-  import eventdata from '../data/eventdata';
+import { DaykeepCalendarMonth } from "@daykeep/calendar-quasar";
+import eventdata from "../data/eventdata";
 
-  export default {
-    name: "Calendar",
-    components: { DaykeepCalendarMonth },
-    data() {
-      return {
-        eventData: eventdata
-      }
-    }
+export default {
+  name: "Calendar",
+  components: { DaykeepCalendarMonth },
+  data() {
+    return {
+      eventData: eventdata
+    };
   }
+};
 </script>
 
 <style scoped>
-
 </style>

@@ -1,10 +1,10 @@
 <template>
   <div>
-      <q-step :name="3" :title="$t('stepper.topics.title')" icon="add_comment">
-        {{ $t("stepper.topics.text") }}<br />
+    <q-step :name="3" :title="$t('stepper.topics.title')" icon="add_comment">
+      {{ $t("stepper.topics.text") }}<br />
 
-        <div class="row">
-          <div v-for="topic in topics" :key="topic">
+      <div class="row">
+        <div v-for="topic in topics" :key="topic">
           <div class="col">
             <div class="q-pa-md row items-start q-gutter-md">
               <q-card class="my-card" flat bordered>
@@ -26,23 +26,23 @@
                   <q-btn flat>{{ $t("stepper.topics.start_session") }}</q-btn>
                 </q-card-actions>
               </q-card>
-              </div>
-              </div>
             </div>
-        </div>
-
-        <q-stepper-navigation class="row">
-          <div class="col">
-            <q-btn
-              flat
-              @click="updateStep(2)"
-              color="secondary"
-              :label="$t('buttons.back')"
-              class="q-ml-sm"
-            />
           </div>
-        </q-stepper-navigation>
-      </q-step>
+        </div>
+      </div>
+
+      <q-stepper-navigation class="row">
+        <div class="col">
+          <q-btn
+            flat
+            @click="updateStep(2)"
+            color="positive"
+            :label="$t('buttons.back')"
+            class="q-ml-sm"
+          />
+        </div>
+      </q-stepper-navigation>
+    </q-step>
   </div>
 </template>
 
@@ -60,14 +60,13 @@ export default {
     }
   },
   methods: {
-    updateStep(step){
-        this.step = step;
-        this.$emit('stepChanged', this.step);
+    updateStep(step) {
+      this.step = step;
+      this.$emit("stepChanged", this.step);
     }
   }
 };
 </script>
 
 <style>
-
 </style>

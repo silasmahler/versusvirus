@@ -1,29 +1,29 @@
 <template>
   <div>
-      <q-step
-        :name="1"
-        :title="$t('stepper.selectPeopleGroup.title')"
-        icon="settings"
-        :done="step > 1"
-      >
-        {{ $t("stepper.selectPeopleGroup.text") }}
-        <q-stepper-navigation class="row">
-          <div class="col">
-            <q-btn
-              @click="updateStepAndGroup(2, 'friends')"
-              color="secondary"
-              :label="$t('stepper.people.friends')"
-            />
-          </div>
-          <div class="col">
-            <q-btn
-              @click="updateStepAndGroup(3, 'strangers')"
-              color="secondary"
-              :label="$t('stepper.people.strangers')"
-            />
-          </div>
-        </q-stepper-navigation>
-      </q-step>
+    <q-step
+      :name="1"
+      :title="$t('stepper.selectPeopleGroup.title')"
+      icon="settings"
+      :done="step > 1"
+    >
+      {{ $t("stepper.selectPeopleGroup.text") }}
+      <q-stepper-navigation class="row">
+        <div class="col">
+          <q-btn
+            @click="updateStepAndGroup(2, 'friends')"
+            color="positive"
+            :label="$t('stepper.people.friends')"
+          />
+        </div>
+        <div class="col">
+          <q-btn
+            @click="updateStepAndGroup(3, 'strangers')"
+            color="positive"
+            :label="$t('stepper.people.strangers')"
+          />
+        </div>
+      </q-stepper-navigation>
+    </q-step>
   </div>
 </template>
 
@@ -37,22 +37,19 @@ export default {
     },
     peopleGroup: {
       type: String,
-      default: 'friends'
-    },
+      default: "friends"
+    }
   },
-  methods:{
-    updateStepAndGroup(step, group){
-         this.step = step;
-         this.peopleGroup = group;
-         this.$emit('stepChanged', this.step);
-         this.$emit('peopleGroupChanged', this.peopleGroup);
-
+  methods: {
+    updateStepAndGroup(step, group) {
+      this.step = step;
+      this.peopleGroup = group;
+      this.$emit("stepChanged", this.step);
+      this.$emit("peopleGroupChanged", this.peopleGroup);
     }
   }
-
-}
+};
 </script>
 
 <style>
-
 </style>

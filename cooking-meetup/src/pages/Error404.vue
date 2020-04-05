@@ -1,13 +1,10 @@
 <template>
   <div class="fixed-center text-center">
     <p>
-      <img
-        src="~assets/sad.svg"
-        style="width:30vw;max-width:150px;"
-      >
+      <img src="~assets/sad.svg" style="width:30vw;max-width:150px;" />
     </p>
     <p class="text-faded">
-      {{ $t('errorPage.message') }}
+      {{ $t("errorPage.message") }}
     </p>
     <q-btn
       color="secondary"
@@ -20,6 +17,6 @@
 
 <script>
 export default {
-  name: 'Error404'
-}
+  name: "Error404"
+};
 </script>
