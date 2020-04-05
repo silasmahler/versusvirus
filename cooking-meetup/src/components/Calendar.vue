@@ -8,6 +8,7 @@
       calendar-timezone="Europe/Berlin"
       :allow-editing="false"
       :render-html="true"
+      
     />
   </div>
 </template>
