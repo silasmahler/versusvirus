@@ -1,17 +1,24 @@
 <template>
-  <div class="flex flex-center">
-    <q-card class="welcome-card">
-      <img
-        src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg"
-        style="z-index:1"
-      />
+  <div>
+    <div class="q-pa-md">
+      <div class="col-6">
+        <q-img src="../assets/unsplash/people-in-kitchen.jpg" 
+               native-context-menu
+               style="height: 500px;"
+        >
+          <div class="absolute-top text-center">
+            <div class="text-h3">{{ $t('tabs.join.title') }}</div>
+          </div>
+        </q-img>
+      </div>
       <q-separator />
-      <q-card-actions vertical>
-        <q-btn @click="updateClickedJoinARoom(true)" color="secondary">
-                  <div class="text-h4">{{ $t('tabs.join.title') }}</div>       
+      <div class="q-gutter-md q-pa-md">
+        <q-btn @click="updateClickedJoinARoom(true)" 
+               color="secondary"
+               :label="$t('tabs.join.title')">  
         </q-btn>
-      </q-card-actions>
-    </q-card>
+      </div>
+    </div> 
   </div>
 </template>
 
