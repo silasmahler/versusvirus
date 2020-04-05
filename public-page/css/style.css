@@ -2088,3 +2088,7 @@ textarea.form-control {
 .image-margin {
   margin: 3rem auto;
 }
+
+.fc-title, .fc-time {
+  color: white;
+}
