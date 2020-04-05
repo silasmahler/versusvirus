@@ -5,55 +5,61 @@ export default {
 
   stepper: {
     selectPeopleGroup: {
-      title: 'Koch-Partner auswählen',
-      text: 'Please select whether you want to cook with friends or strangers:',
+      title: 'Choix des co-cuisiniers',
+      text: 'Sélectionnez si vous voulez cuisiner avec vos amis ou des inconnus:',
     },
     people: {
-      friends: 'Friends',
-      strangers: 'Strangers',
+      friends: 'Amis',
+      strangers: 'Iconnus',
     },
     chefWanted: {
-      title: 'Chef support wanted?',
-      text: 'Please choose if you want to be supported by a professional chef:'
+      title: 'Soutien d\'un chef cuisinier?',
+      text: 'Sélectionnez si vous voulez avoir le soutien d\'un chef professionnel:' 
     },
     topics: {
-      title: 'Choose topics',
-      text: 'Select a topic of your choice',
+      title: 'Choix des sujets',
+      text: 'Sélectionnez un sujet de votre choix',
 
-      start_session: 'Start session!',
+      start_session: 'Commencer la séance!',
 
       categories: {
-        vegetarian: 'Vegetarian',
-        vegan: 'Vegan'
+        vegetarian: 'Végétarien',
+        vegan: 'Végétalien'
       },
 
-      leaf_to_root: 'Leaf to Root',
-      leaf_to_root_desc: 'Vegetables from leaf to root, fruit from skin to core: "Leaf to Root" is the nose to tail for plants. More and more culinary delicacies are being made from otherwise little-appreciated vegetable parts such as pea peel or fennel stalks.',
+      leaf_to_root: 'De la feuille à la racine',
+      leaf_to_root_desc: 'Des légumes de la feuille à la racine, des fruits de la peau au noyau: “De la feuille à la racine” est le concept de la tête aux pieds pour les plantes. De plus en plus de spécialités culinaires sont préparées en exploitant au mieux le légume dans son intégralité avec ses parties autrement rejetées tel que les cosses de pois et les tiges de fenouil.',
 
-      urban_agriculture: 'Urban Agriculture',
-      urban_agriculture_desc: 'The city is a conurbation and focal point of consumption. However, many foodstuffs are still produced in the countryside. But there are other ways. Urban Agriculture is committed to a diverse flora and fauna, also and especially in urban settlement areas.'
+      urban_agriculture: 'Agriculture urbaine',
+      urban_agriculture_desc: 'La ville est une agglomération et un foyer de consommation. Toutefois, beaucoup de denrées alimentaires sont toujours produites dans la campagne. Mais il y a d\'autres façons de faire. L\'agriculture urbaine est soucieuse d\'une faune et flore diversifiées, notamment dans les zones urbaines habitées.'
     },
   },
   buttons: {
-    continue: 'Continue',
-    back: 'Back',
-    save: 'Save',
-    login: 'Login',
-    logout: 'Logout',
+    continue: 'Suivant',
+    back: 'Retour',
+    save: 'Enregistrer',
+    login: 'Se connecter',
+    logout: 'Se déconnecter',
+    leave: 'Partir',
+    cancel: 'Annuler'
   },
   tabs: {
     join: {
-      title: 'Join a room',
-      tabTitle: 'Join room'
+      title: 'Rejoindre une chambre',
+      tabTitle: 'Rejoindre la chambre'
     },
     create: {
-      title: 'Create a room',
-      tabTitle: 'Create room'
+      title: 'Créer une chambre',
+      tabTitle: 'Créer la chambre'
+    },
+    calendar: {
+      title: 'À venir',
+      tabTitle: 'À venir'
     }
   },
   createRoom: {
-    topicName: 'Topic name',
-    categorySelect: 'Select a category',
+    topicName: 'Nom du sujet',
+    categorySelect: 'Choisir une catégorie',
     description: 'Description',
     categories: {
       vegan: 'vegan',
@@ -62,47 +68,52 @@ export default {
       german: 'german',
       italian: 'italian'
     },
-    createButton: 'Create New Room',
-    openButton: 'Open Room',
-    copyButton: 'Copy Room URL'
+    createButton: 'Créer une nouvelle chambre',
+    openButton: 'Ouvrir la chambre',
+    copyButton: 'Copier l\'URL de la chambre'
   },
   login: {
-    username: 'Username',
-    password: 'Password',
-    error: 'Either username or password are wrong'
+    username: 'Nom d\'utilisateur',
+    password: 'Mot de passe',
+    error: 'Mauvais nom d\'utilisateur ou mot de passe'
   },
   profile: {
-    name: 'Name',
+    name: 'Nom',
     vitae: 'Vitae',
-    niche: 'Niche',
+    niche: 'Créneau',
     devices: {
-      title: 'Devices',
+      title: 'Appareil',
       smartphone: {
-        label: 'Smartphone',
+        label: 'Téléphone portable',
         hint: 'Hint for Smartphones'
       },
       notebook: {
-        label: 'Notebook',
+        label: 'Cahier',
         hint: 'Hint for Notebooks'
       },
       camera: {
-        label: 'Camera',
+        label: 'Appareil photo',
         hint: 'Hint for Cameras'
       }
     }
   },
+  room: {
+    leaveRoomMessage: 'Vous êtes sur le point de quitter la session de cuisine actuelle.',
+    currentRecipe: 'Recette actuelle'
+  },
   menu: {
-    profile: 'Profile'
+    profile: 'Profil'
   },
   languages: {
-    english: 'English',
-    french: 'French',
-    german: 'German',
-    italian: 'Italian',
-    chooseLanguage: 'Choose Language'
+    english: 'Anglais',
+    french: 'Français',
+    german: 'Allemand',
+    italian: 'Italien',
+    chooseLanguage: 'Choisir la langue'
   },
   errorPage: {
-    message: 'Sorry, nothing here... 404',
-    back: 'Go back'
+    message: 'Désolé, il n\'y a rien ici … 404',
+    back: 'Retour'
   }
 }
+

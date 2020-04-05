@@ -1,26 +1,22 @@
 <template>
   <q-page>
     <q-tab-panels v-model="tab" animated>
-      <q-tab-panel name="landing">
-        <JoinCard v-if="!clickedJoinARoom" v-bind="clickedJoinARoom" />
-        <JoinStepper v-if="clickedJoinARoom" />
-      </q-tab-panel>
-
+      <!-- JOIN-PANEL -->>
       <q-tab-panel name="join">
-        <div class="text-h4"></div>
         <JoinCard v-if="!clickedJoinARoom" 
                   :clickedJoinARoom="clickedJoinARoom"
-                  @clickedJoinARoom="clickedJoinARoom = $event"
+                  @emitclickedJoinARoom="clickedJoinARoom = $event"
         />
         <JoinStepper v-if="clickedJoinARoom" />
       </q-tab-panel>
 
+      <!-- CREATE-PANEL -->>
       <q-tab-panel name="create" animated>
         <CreateRoom />
       </q-tab-panel>
 
+      <!-- CALENDAR-PANEL -->>
       <q-tab-panel name="calendar" animated>
-        <div class="text-h4">{{ $t('tabs.calendar.title') }}</div>
         <Calendar />
       </q-tab-panel>
     </q-tab-panels>
@@ -56,7 +52,7 @@ export default {
   components: { JoinStepper, CreateRoom, Calendar, JoinCard },
   data() {
     return {
-      tab: "landing",
+      tab: "join",
       clickedJoinARoom: false
     };
   },

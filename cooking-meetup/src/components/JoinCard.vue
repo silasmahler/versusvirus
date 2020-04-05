@@ -1,18 +1,15 @@
 <template>
   <div class="flex flex-center">
-    <q-card class="welcome-card" v-if="!clickedJoinARoom">
-      <q-img
-        src="../assets/dinner_party_logo.png"
-        spinner-color="white"
-        style="height: 200px; max-width: 200px; position:absolute; right: 0; z-index:99"
-      />
+    <q-card class="welcome-card">
       <img
         src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg"
         style="z-index:1"
       />
       <q-separator />
       <q-card-actions vertical>
-        <q-btn @click="updateClickedJoinARoom()" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
+        <q-btn @click="updateClickedJoinARoom(true)" color="secondary">
+                  <div class="text-h4">{{ $t('tabs.join.title') }}</div>       
+        </q-btn>
       </q-card-actions>
     </q-card>
   </div>
@@ -28,9 +25,9 @@ export default {
     }
   },
   methods: {
-    updateClickedJoinARoom(){
-      this.clickedJoinARoom = true;
-      this.$emit('emitclickedJoinARoom', this.clickedJoinARoom)
+    updateClickedJoinARoom(bool){
+      this.clickedJoinARoom = bool;
+      this.$emit('emitclickedJoinARoom', this.clickedJoinARoom);
     }
   }
 };

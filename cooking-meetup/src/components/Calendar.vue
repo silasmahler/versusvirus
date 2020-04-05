@@ -1,5 +1,6 @@
 <template>
   <div>
+    <div class="text-h4">{{ $t('tabs.calendar.title') }}</div>
     <daykeep-calendar-month
       :start-date="new Date()"
       :event-array="eventData"
