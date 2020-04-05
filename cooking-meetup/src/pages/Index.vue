@@ -16,7 +16,6 @@
       </q-tab-panel>
 
       <q-tab-panel name="create" animated>
-        <div class="text-h4">{{ $t('tabs.create.title') }}</div>
         <CreateRoom />
       </q-tab-panel>
 
