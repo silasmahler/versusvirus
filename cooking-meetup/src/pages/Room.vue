@@ -6,6 +6,8 @@
       label="<"
       v-if="!drawer"
     />
+
+    <div id="video" />
     <!--  TODO button beschriftung  -->
     <q-btn
       class="bg-red text-white leave-button"
@@ -94,13 +96,6 @@
         video.play();
       }
     },
-    mounted() {
-      this.authenticated = isAuthenticated();
-      if (!this.authenticated) {
-        this.$router.push({path: "login"});
-      }
-    }
-  },
   mounted() {
     this.authenticated = isAuthenticated();
     if (!this.authenticated) {
