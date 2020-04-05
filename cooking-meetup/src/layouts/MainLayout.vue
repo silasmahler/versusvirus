@@ -32,6 +32,7 @@
             <q-img :src="profile.image" alt="Test" v-if="profile.image"/>
             <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image"/>
           </q-avatar>
+          &nbsp;
           {{profile.name}}
           <q-menu>
             <q-list style="min-width: 100px">
