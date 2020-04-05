@@ -1,6 +1,6 @@
 <template>
   <div>
-          <q-step
+      <q-step
         :name="1"
         :title="$t('stepper.selectPeopleGroup.title')"
         icon="settings"

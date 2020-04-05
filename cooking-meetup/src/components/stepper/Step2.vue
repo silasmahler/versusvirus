@@ -1,6 +1,6 @@
 <template>
   <div>
-          <q-step
+      <q-step
         :name="2"
         :title="$t('stepper.chefWanted.title')"
         icon="create_new_folder"

@@ -1,17 +1,26 @@
 <template>
-  <div class="flex flex-center">
-    <q-card class="login-card">
-      <q-card-section>
-        <q-input v-model="form.username" :label="$t('login.username')" />
-        <q-input v-model="form.password" type="password" :label="$t('login.password')" />
-        <q-btn class="login-button" color="primary" :label="$t('buttons.login')" @click="login" />
-        <q-banner v-if="error" class="bg-red text-white error">
-          {{$t('login.error')}}
-        </q-banner>
-      </q-card-section>
-
-    </q-card>
-  </div>
+  <div class="q-pa-md items-center column">
+      <div class="col-6">
+        <q-img
+          src="../assets/dinner_party_logo.png"
+          spinner-color="white"
+          style="height: 200px; max-width: 200px"
+        />
+      </div>
+      <div class="col-6">
+        <q-card class="login-card">
+          <q-card-section>
+            <q-input v-model="form.username" :label="$t('login.username')" />
+            <q-input v-model="form.password" type="password" :label="$t('login.password')" />
+            <q-btn class="login-button" color="primary" :label="$t('buttons.login')" @click="login" />
+            <q-banner v-if="error" class="bg-red text-white error">
+              {{$t('login.error')}}
+            </q-banner>
+          </q-card-section>
+      
+        </q-card>
+      </div>
+   </div>
 </template>
 
 <script>

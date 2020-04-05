@@ -8,9 +8,29 @@
       />
     </div>
     <q-tab-panels v-model="tab" animated>
+
+      <q-tab-panel name="landing">
+        <div class="text-h4 text-center">Welcome!</div>
+          <q-card class="my-card" v-if="!clickedJoinARoom">
+            <img src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg">
+            <q-separator />
+            <q-card-actions vertical>
+              <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
+            </q-card-actions>
+          </q-card>
+        <JoinStepper v-if="clickedJoinARoom"/>
+      </q-tab-panel>
+
       <q-tab-panel name="join">
-        <div class="text-h4">{{ $t('tabs.join.title') }}</div>
-        <JoinStepper />
+        <div class="text-h4"></div>
+          <q-card class="my-card" v-if="!clickedJoinARoom">
+            <img src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg">
+            <q-separator />
+            <q-card-actions vertical>
+              <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
+            </q-card-actions>
+          </q-card>
+        <JoinStepper v-if="clickedJoinARoom"/>
       </q-tab-panel>
 
       <q-tab-panel name="create" animated>
@@ -54,7 +74,8 @@ export default {
   components: { JoinStepper, CreateRoom, Calendar },
   data () {
     return {
-      tab: 'join'
+      tab: 'landing',
+      clickedJoinARoom: false
     }
   },
   mounted() {

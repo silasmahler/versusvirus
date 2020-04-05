@@ -3,7 +3,7 @@
     <q-header elevated>
       <q-toolbar>
         <q-avatar>
-          <img src="../assets/FORKnKNIFE.png" />
+          <img src="../assets/FORKnKNIFE.png" v-if="showLogo"/>
         </q-avatar>
 
         <q-toolbar-title>
@@ -36,7 +36,7 @@
 
 <script>
 import EssentialLink from "components/EssentialLink";
-import {logout} from "../services/storage-service";
+import { logout } from "../services/storage-service";
 
 export default {
   name: "MainLayout",
@@ -45,6 +45,7 @@ export default {
   },
   data() {
     return {
+      showLogo: true,
       languages: ["english", "french", "german", "italian"],
       leftDrawerOpen: false,
       menu: [
