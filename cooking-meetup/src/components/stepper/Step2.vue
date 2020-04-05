@@ -13,7 +13,7 @@
         <div class="col">
           <q-btn
             @click="updateStep(3)"
-            color="positive"
+            color="accent"
             :label="$t('buttons.continue')"
           />
         </div>
@@ -21,7 +21,7 @@
           <q-btn
             flat
             @click="updateStep(1)"
-            color="positive"
+            color="accent"
             :label="$t('buttons.back')"
             class="q-ml-sm"
           />

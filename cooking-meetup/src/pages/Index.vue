@@ -1,22 +1,20 @@
 <template>
   <q-page>
     <q-tab-panels v-model="tab" animated>
-      <!-- JOIN-PANEL -->>
+      <!-- JOIN-PANEL -->
+      >
       <q-tab-panel name="join">
-        <JoinCard
-          v-if="!clickedJoinARoom"
-          :clickedJoinARoom="clickedJoinARoom"
-          @emitclickedJoinARoom="clickedJoinARoom = $event"
-        />
-        <JoinStepper v-if="clickedJoinARoom" />
+        <JoinStepper />
       </q-tab-panel>
 
-      <!-- CREATE-PANEL -->>
+      <!-- CREATE-PANEL -->
+      >
       <q-tab-panel name="create" animated>
         <CreateRoom />
       </q-tab-panel>
 
-      <!-- CALENDAR-PANEL -->>
+      <!-- CALENDAR-PANEL -->
+      >
       <q-tab-panel name="calendar" animated>
         <Calendar />
       </q-tab-panel>
@@ -45,12 +43,11 @@
 <script>
 import JoinStepper from "../components/stepper/JoinStepper";
 import CreateRoom from "../components/CreateRoom";
-import JoinCard from "../components/JoinCard";
 import { isAuthenticated } from "../services/storage-service";
 import Calendar from "../components/Calendar";
 export default {
   name: "PageIndex",
-  components: { JoinStepper, CreateRoom, Calendar, JoinCard },
+  components: { JoinStepper, CreateRoom, Calendar },
   data() {
     return {
       tab: "join",

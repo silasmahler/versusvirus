@@ -11,14 +11,14 @@
         <div class="col">
           <q-btn
             @click="updateStepAndGroup(2, 'friends')"
-            color="positive"
+            color="accent"
             :label="$t('stepper.people.friends')"
           />
         </div>
         <div class="col">
           <q-btn
             @click="updateStepAndGroup(3, 'strangers')"
-            color="positive"
+            color="accent"
             :label="$t('stepper.people.strangers')"
           />
         </div>
