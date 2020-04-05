@@ -40,6 +40,8 @@ export default {
     save: 'Save',
     login: 'Login',
     logout: 'Logout',
+    leave: 'Leave',
+    cancel: 'Cancel'
   },
   tabs: {
     join: {
@@ -94,6 +96,10 @@ export default {
         hint: 'Hint for Cameras'
       }
     }
+  },
+  room: {
+    leaveRoomMessage: 'You are about to leave the current cooking session.',
+    currentRecipe: 'Current Recipe'
   },
   menu: {
     profile: 'Profile'
