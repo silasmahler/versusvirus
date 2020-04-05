@@ -11,7 +11,7 @@
         </div>
       </q-img>
     </div>
-    <q-img src="" />
+    <q-img src />
     <div class="q-gutter-md">
       <q-input
         v-model="topic"
@@ -25,37 +25,21 @@
         emit-value
         map-options
       />
-      <q-input
-        v-model="description"
-        type="textarea"
-        :label="$t('createRoom.description')"
-      />
+      <q-input v-model="description" type="textarea" :label="$t('createRoom.description')" />
     </div>
 
     <div>
       <div class="q-pa-md">
         <div class="row col" v-if="!roomUrl">
-          <q-btn
-            @click="createRoom"
-            color="positive"
-            :label="$t('createRoom.createButton')"
-          />
+          <q-btn @click="createRoom" color="accent" :label="$t('createRoom.createButton')" />
         </div>
         <div class="row" v-if="roomUrl && inviteUrl">
           <div class="col">
             <q-btn
               v-if="roomUrl"
               @click="openRoom"
-              color="warning"
+              color="accent"
               :label="$t('createRoom.openButton')"
-            />
-          </div>
-          <div class="col">
-            <q-btn
-              v-if="inviteUrl"
-              @click="copyRoom"
-              color="info"
-              :label="$t('createRoom.copyButton')"
             />
           </div>
         </div>
@@ -107,14 +91,11 @@ export default {
 
       this.roomUrl = roomUrl;
       this.inviteUrl = inviteUrl;
-      Notify.create("Creating a Room for you!");
+      copyToClipboard(this.inviteUrl);
+      Notify.create("Copied Room-Link to Clipboard!");
     },
     openRoom: function(event) {
       window.open(this.roomUrl, "_blank");
-    },
-    copyRoom: function(event) {
-      copyToClipboard(this.inviteUrl);
-      Notify.create("Copied Room-Link to Clipboard!");
     }
   }
 };

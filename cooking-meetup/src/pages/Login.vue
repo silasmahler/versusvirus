@@ -9,20 +9,9 @@
       <q-card class="login-card">
         <q-card-section>
           <q-input v-model="form.username" :label="$t('login.username')" />
-          <q-input
-            v-model="form.password"
-            type="password"
-            :label="$t('login.password')"
-          />
-          <q-btn
-            class="login-button"
-            color="positive"
-            :label="$t('buttons.login')"
-            @click="login"
-          />
-          <q-banner v-if="error" class="bg-red text-white error">
-            {{ $t("login.error") }}
-          </q-banner>
+          <q-input v-model="form.password" type="password" :label="$t('login.password')" />
+          <q-btn class="login-button" color="accent" :label="$t('buttons.login')" @click="login" />
+          <q-banner v-if="error" class="bg-red text-white error">{{ $t("login.error") }}</q-banner>
         </q-card-section>
       </q-card>
     </div>
