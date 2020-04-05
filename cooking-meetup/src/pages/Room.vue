@@ -88,7 +88,6 @@
           console.debug('[App]', 'Ignore received event:', event.type);
           return;
       }
-      }
 
         let video = document.querySelector("video");
         video.srcObject = event.remoteStream;
