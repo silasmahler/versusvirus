@@ -18,12 +18,23 @@
           <p>{{ profile.vitae }}</p>
         </div>
         <div class="text-h6">
+          <q-icon
+            name="restaurant"
+            class="text-primary"
+            style="font-size: 32px;"
+          />
           {{ profile.niche }}
         </div>
         <div class="text-h6">
-          {{ $t("profile.devices.title") }}:
           <div v-for="device in recordingDevices" v-bind:key="device.label">
-            <span v-if="device.active">{{ device.label }}</span>
+            <div v-if="device.active">
+              <q-icon
+                name="check"
+                class="text-primary"
+                style="font-size: 32px;"
+              />
+              {{ device.label }}
+            </div>
           </div>
         </div>
       </div>
@@ -44,12 +55,12 @@
           :name="device.value"
           v-model="device.active"
           :label="device.label"
-          color="positive"
+          color="primary"
         />
       </div>
     </div>
 
-    <q-btn color="positive" :label="$t('buttons.save')" @click="save" />
+    <q-btn color="primary" :label="$t('buttons.save')" @click="save" />
   </q-page>
 </template>
 
