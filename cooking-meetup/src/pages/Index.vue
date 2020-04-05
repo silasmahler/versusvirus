@@ -2,37 +2,13 @@
   <q-page>
     <q-tab-panels v-model="tab" animated>
       <q-tab-panel name="landing">
-        <div class="flex flex-center">
-          <q-card class="welcome-card" v-if="!clickedJoinARoom">
-            <q-img
-              src="../assets/dinner_party_logo.png"
-              spinner-color="white"
-              style="height: 200px; max-width: 200px; position:absolute; right: 0; z-index:99"
-            />
-            <img
-              src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg"
-              style="z-index:1"
-            />
-            <q-separator />
-            <q-card-actions vertical>
-              <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
-            </q-card-actions>
-          </q-card>
-        </div>
+        <JoinCard v-if="!clickedJoinARoom" v-bind="clickedJoinARoom" />
         <JoinStepper v-if="clickedJoinARoom" />
       </q-tab-panel>
 
       <q-tab-panel name="join">
         <div class="text-h4"></div>
-        <q-card class="my-card" v-if="!clickedJoinARoom">
-          <img
-            src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg"
-          />
-          <q-separator />
-          <q-card-actions vertical>
-            <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
-          </q-card-actions>
-        </q-card>
+        <JoinCard v-if="!clickedJoinARoom" />
         <JoinStepper v-if="clickedJoinARoom" />
       </q-tab-panel>
 
@@ -70,11 +46,12 @@
 <script>
 import JoinStepper from "../components/stepper/JoinStepper";
 import CreateRoom from "../components/CreateRoom";
+import JoinCard from "../components/JoinCard";
 import { isAuthenticated } from "../services/storage-service";
 import Calendar from "../components/Calendar";
 export default {
   name: "PageIndex",
-  components: { JoinStepper, CreateRoom, Calendar },
+  components: { JoinStepper, CreateRoom, Calendar, JoinCard },
   data() {
     return {
       tab: "landing",
