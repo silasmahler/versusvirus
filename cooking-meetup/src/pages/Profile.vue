@@ -1,20 +1,31 @@
 <template>
   <q-page class="q-pa-md">
-    <q-avatar size="200px">
-      <q-img :src="profile.image" alt="Test" v-if="profile.image" />
-      <q-img
-        src="../assets/userfotos/placeholder.png"
-        alt="Test"
-        v-if="!profile.image"
-      />
-    </q-avatar>
-    <p>{{ $t("profile.name") }}: {{ profile.name }}</p>
-    <p>{{ $t("profile.vitae") }}: {{ profile.vitae }}</p>
-    <p>{{ $t("profile.niche") }}: {{ profile.niche }}</p>
-    <div>
-      {{ $t("profile.devices.title") }}:
-      <div v-for="device in recordingDevices" v-bind:key="device.label">
-        <span v-if="device.active">{{ device.hint }}</span>
+    <div class="row">
+      <div class="col-auto">
+        <q-avatar size="200px">
+          <q-img :src="profile.image" alt="Test" v-if="profile.image" />
+          <q-img
+            src="../assets/userfotos/placeholder.png"
+            alt="Test"
+            v-if="!profile.image"
+          />
+        </q-avatar>
+      </div>
+      <div class="col-1"></div>
+      <div class="col">
+        <div class="text-h3">{{ profile.name }}</div>
+        <div>
+          <p>{{ profile.vitae }}</p>
+        </div>
+        <div class="text-h6">
+          {{ profile.niche }}
+        </div>
+        <div class="text-h6">
+          {{ $t("profile.devices.title") }}:
+          <div v-for="device in recordingDevices" v-bind:key="device.label">
+            <span v-if="device.active">{{ device.label }}</span>
+          </div>
+        </div>
       </div>
     </div>
 
