@@ -3,7 +3,7 @@
     <q-header elevated>
       <q-toolbar>
         <q-avatar>
-          <img src="../assets/FORKnKNIFE.png" v-if="showLogo"/>
+          <img src="../assets/FORKnKNIFE.png" v-if="showLogo" />
         </q-avatar>
 
         <q-toolbar-title>
@@ -12,7 +12,20 @@
 
         <q-space />
 
-        <q-select v-model="lang" :options="langOptions" :label="$t('languages.chooseLanguage')" dense emit-value map-options options-dense class="language-choose"/>
+        <q-select
+          color="secondary"
+          label-color="secondary"
+          bg-color="white"
+          outlined
+          v-model="lang"
+          :options="langOptions"
+          :label="$t('languages.chooseLanguage')"
+          dense
+          emit-value
+          map-options
+          options-dense
+          class="language-choose"
+        />
 
         <q-btn flat round dense icon="more_vert">
           <q-menu>
@@ -21,7 +34,7 @@
               <q-seperator />
               <q-item clickable v-close-popup>
                 <q-item-section>
-                  <q-btn flat dense @click="logout" :label="$t('buttons.logout')"/>
+                  <q-btn flat dense @click="logout" :label="$t('buttons.logout')" />
                 </q-item-section>
               </q-item>
             </q-list>
@@ -49,10 +62,10 @@ export default {
     return {
       lang: this.$i18n.locale,
       langOptions: [
-        { value: 'en-us', label: this.$i18n.t('languages.english') },
-        { value: 'fr', label: this.$i18n.t('languages.french') },
-        { value: 'de', label: this.$i18n.t('languages.german') },
-        { value: 'it', label: this.$i18n.t('languages.italian') },
+        { value: "en-us", label: this.$i18n.t("languages.english") },
+        { value: "fr", label: this.$i18n.t("languages.french") },
+        { value: "de", label: this.$i18n.t("languages.german") },
+        { value: "it", label: this.$i18n.t("languages.italian") }
       ],
       showLogo: true,
       languages: ["english", "french", "german", "italian"],
@@ -73,20 +86,20 @@ export default {
   },
   watch: {
     lang(lang) {
-      this.$i18n.locale = lang
+      this.$i18n.locale = lang;
     }
   },
   methods: {
-    logout: function () {
+    logout: function() {
       logout();
-      this.$router.push({ path: '/login' });
+      this.$router.push({ path: "/login" });
     }
   }
 };
 </script>
 
 <style scoped>
-  .language-choose {
-    width: 10rem;
-  }
+.language-choose {
+  width: 10rem;
+}
 </style>

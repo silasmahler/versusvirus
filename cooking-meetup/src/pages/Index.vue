@@ -1,36 +1,39 @@
 <template>
   <q-page>
-    <div class="flex flex-center">
-      <q-img
-        src="../assets/dinner_party_logo.png"
-        spinner-color="white"
-        style="height: 200px; max-width: 200px"
-      />
-    </div>
     <q-tab-panels v-model="tab" animated>
-
       <q-tab-panel name="landing">
-        <div class="text-h4 text-center">Welcome!</div>
-          <q-card class="my-card" v-if="!clickedJoinARoom">
-            <img src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg">
+        <div class="flex flex-center">
+          <q-card class="welcome-card" v-if="!clickedJoinARoom">
+            <q-img
+              src="../assets/dinner_party_logo.png"
+              spinner-color="white"
+              style="height: 200px; max-width: 200px; position:absolute; right: 0; z-index:99"
+            />
+            <img
+              src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg"
+              style="z-index:1"
+            />
             <q-separator />
             <q-card-actions vertical>
               <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
             </q-card-actions>
           </q-card>
-        <JoinStepper v-if="clickedJoinARoom"/>
+        </div>
+        <JoinStepper v-if="clickedJoinARoom" />
       </q-tab-panel>
 
       <q-tab-panel name="join">
         <div class="text-h4"></div>
-          <q-card class="my-card" v-if="!clickedJoinARoom">
-            <img src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg">
-            <q-separator />
-            <q-card-actions vertical>
-              <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
-            </q-card-actions>
-          </q-card>
-        <JoinStepper v-if="clickedJoinARoom"/>
+        <q-card class="my-card" v-if="!clickedJoinARoom">
+          <img
+            src="https://st.focusedcollection.com/9163412/i/650/focused_125210828-stock-photo-happy-people-cooking-together.jpg"
+          />
+          <q-separator />
+          <q-card-actions vertical>
+            <q-btn @click="clickedJoinARoom = true" color="secondary">{{ $t('tabs.join.title') }}</q-btn>
+          </q-card-actions>
+        </q-card>
+        <JoinStepper v-if="clickedJoinARoom" />
       </q-tab-panel>
 
       <q-tab-panel name="create" animated>
@@ -57,7 +60,7 @@
         >
           <q-tab name="join" :label="$t('tabs.join.tabTitle')"></q-tab>
           <q-tab name="create" :label="$t('tabs.create.tabTitle')"></q-tab>
-           <q-tab name="calendar" :label="$t('tabs.calendar.tabTitle')"></q-tab>
+          <q-tab name="calendar" :label="$t('tabs.calendar.tabTitle')"></q-tab>
         </q-tabs>
       </q-toolbar>
     </q-footer>
@@ -67,20 +70,20 @@
 <script>
 import JoinStepper from "../components/stepper/JoinStepper";
 import CreateRoom from "../components/CreateRoom";
-import {isAuthenticated} from "../services/storage-service";
+import { isAuthenticated } from "../services/storage-service";
 import Calendar from "../components/Calendar";
 export default {
   name: "PageIndex",
   components: { JoinStepper, CreateRoom, Calendar },
-  data () {
+  data() {
     return {
-      tab: 'landing',
+      tab: "landing",
       clickedJoinARoom: false
-    }
+    };
   },
   mounted() {
     this.authenticated = isAuthenticated();
-    if(!this.authenticated) {
+    if (!this.authenticated) {
       this.$router.push({ path: "login" });
     }
   }

@@ -53,8 +53,8 @@ export default {
       tabTitle: 'Create room'
     },
     calendar: {
-      title: 'Calendar',
-      tabTitle: 'Calendar'
+      title: 'Upcoming',
+      tabTitle: 'Upcoming'
     }
   },
   createRoom: {
