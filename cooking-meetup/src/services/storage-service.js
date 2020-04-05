@@ -55,7 +55,7 @@ const profile = (name, niche, vitae, recordingDevices, image) => {
 };
 
 const data = [
-  user('test', 'test', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'])),
+  user('test', 'test', 'user', profile('Alfonds', 'vegan', 'Hi my name is Alfonds and i like cooking interesting dishes, especially vegan! #LoveThePlane #LoveTheEarth', ['smartphone', 'camera'])),
   user('test1', 'test123', 'user', profile('Test 1', 'vegan', 'TODO', ['smartphone', 'notebook'], 'img/test1.png')),
   user('test2', 'test123', 'user', profile('Test 2', 'traditional', 'TODO', ['camera', 'notebook'], 'img/test2.png')),
   user('test3', 'test123', 'user', profile('Test 3', 'italian', 'TODO', ['notebook'], 'img/test3.png')),

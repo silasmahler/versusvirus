@@ -35,7 +35,7 @@ export default {
   data () {
     return {
       profile: {
-        image: '',
+        image: 'Alfonds',
         name: '',
         vitae: '',
         niche: '',
