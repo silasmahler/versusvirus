@@ -14,6 +14,21 @@
 
         <q-space />
 
+        <q-select
+          color="secondary"
+          label-color="secondary"
+          bg-color="white"
+          outlined
+          v-model="lang"
+          :options="langOptions"
+          :label="$t('languages.chooseLanguage')"
+          dense
+          emit-value
+          map-options
+          options-dense
+          class="language-choose"
+        />
+
         <q-btn flat dense v-if="profile" class="menu-profile">
           <q-avatar>
             <q-img :src="profile.image" alt="Test" v-if="profile.image" />
@@ -33,9 +48,9 @@
                 v-bind="link"
               />
               <q-seperator />
-              <q-item clickable v-close-popup tag="btn" @click="logout">{{
-                $t("buttons.logout")
-              }}</q-item>
+              <q-item clickable v-close-popup tag="btn" @click="logout">
+                {{ $t("buttons.logout") }}
+              </q-item>
             </q-list>
           </q-menu>
         </q-btn>
@@ -86,6 +101,13 @@ export default {
   },
   data() {
     return {
+      lang: this.$i18n.locale,
+      langOptions: [
+        { value: "en-us", label: this.$i18n.t("languages.english") },
+        { value: "fr", label: this.$i18n.t("languages.french") },
+        { value: "de", label: this.$i18n.t("languages.german") },
+        { value: "it", label: this.$i18n.t("languages.italian") }
+      ],
       showLogo: true,
       profile: null,
       leftDrawerOpen: false,
@@ -97,6 +119,11 @@ export default {
         }
       ]
     };
+  },
+  watch: {
+    lang(lang) {
+      this.$i18n.locale = lang;
+    }
   },
   methods: {
     logout: function() {
