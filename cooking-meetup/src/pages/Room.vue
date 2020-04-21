@@ -1,17 +1,20 @@
 <template>
   <div>
     <q-btn
-      class="drawer-open"
+      class="drawer-open button-overlay bg-white"
       @click="drawer = !drawer"
       label="<"
       v-if="!drawer"
     />
     <!--  TODO button beschriftung  -->
     <q-btn
-      class="bg-red text-white leave-button"
+      class="bg-red text-white leave-button button-overlay"
       @click="leaveConfirm = true"
       label="x"
     />
+    <iframe class="mock-video" src="https://www.youtube.com/embed/fQallQyxAfw?controls=0&modestbranding=1"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen/>
     <q-drawer
       v-model="drawer"
       :width="400"
@@ -30,6 +33,18 @@
           praesentium molestias a adipisci, dolore vitae odit, quidem
           consequatur optio voluptates asperiores pariatur eos numquam rerum
           delectus commodi perferendis voluptate?
+          <q-separator/>
+          <div class="chat">
+            <ul class="chat-message-list">
+              <li class="chat-message">User1 [19:36]: Hey guys</li>
+              <li class="chat-message">User2 [19:36]: Hello</li>
+              <li class="chat-message">You [19:36]: Evening</li>
+              <li class="chat-message">User1 [19:37]: Nice recipe!</li>
+              <li class="chat-message">User2 [19:37]: Yeah! Looking forward to it!</li>
+              <li class="chat-message">User3 [19:45]: Looks great!</li>
+            </ul>
+            <textarea class="chat-message-input" :placeholder="$t('conferenceRoom.chat.messagePlaceholder')"></textarea>
+          </div>
         </div>
       </q-scroll-area>
     </q-drawer>
@@ -92,7 +107,7 @@ export default {
 }
 .leave-button {
   font-size: large;
-  position: absolute;
+  position: fixed;
   left: 2rem;
   bottom: 2rem;
   width: 3rem;
@@ -101,5 +116,34 @@ export default {
 }
 .drawer-content {
   margin: 10px;
+}
+
+.mock-video {
+  border: 0;
+  z-index: 1;
+  height: calc(100% - 50px);
+  width: 100%;
+  left: 0;
+  right: 0;
+  position: absolute;
+  top: 50px;
+}
+
+.button-overlay {
+  z-index: 999;
+}
+
+.chat-message-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.chat-message {
+  margin-bottom: 2px;
+}
+
+.chat-message-input {
+  position: fixed;
+  bottom: 2rem;
 }
 </style>

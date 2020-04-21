@@ -46,7 +46,7 @@ const user = (username, password, role, profile) => {
   };
 };
 
-const profile = (name, niche, vitae, recordingDevices, lang, image) => {
+const profile = (name, niche, vitae, recordingDevices, image, lang) => {
   return {
     name: name,
     niche: niche,
@@ -66,7 +66,8 @@ const data = [
       "Alfonds",
       "vegan, vegetarian",
       "Hi my name is Alfonds and i like cooking interesting dishes, especially vegan! #LoveThePlane #LoveTheEarth",
-      ["smartphone", "camera"]
+      ["smartphone", "camera"],
+      "img/test1.png"
     )
   ),
   user(

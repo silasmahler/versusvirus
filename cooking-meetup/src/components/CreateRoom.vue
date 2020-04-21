@@ -75,27 +75,11 @@ export default {
     };
   },
   methods: {
-    createRoom: async function(event) {
-      let {
-        data: {
-          links: { gui: roomUrl, guest_join: inviteUrl }
-        }
-      } = await this.$axios.post(
-        "/rooms",
-        qs.stringify({
-          user: {
-            name: this.topic
-          }
-        })
-      );
-
-      this.roomUrl = roomUrl;
-      this.inviteUrl = inviteUrl;
-      copyToClipboard(this.inviteUrl);
-      Notify.create("Copied Room-Link to Clipboard!");
+    createRoom: () => {
+      this.$router.push({ path: "room" });
     },
-    openRoom: function(event) {
-      window.open(this.roomUrl, "_blank");
+    openRoom: () => {
+      this.$router.push({ path: "room" });
     }
   }
 };
