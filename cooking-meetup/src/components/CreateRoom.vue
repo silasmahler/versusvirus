@@ -71,31 +71,36 @@ export default {
       category: null,
       desription: "",
       roomUrl: "",
-      inviteUrl: ""
+      inviteUrl: "",
+      guiUrl: ""
     };
   },
   methods: {
     createRoom: async function(event) {
       let {
         data: {
-          links: { gui: roomUrl, guest_join: inviteUrl }
-        }
-      } = await this.$axios.post(
-        "/rooms",
-        qs.stringify({
-          user: {
-            name: this.topic
+          links: {
+            self: roomUrl,
+            gui: guiUrl,
+            guest_join: inviteUrl
           }
-        })
+        }
+      } = await this.$axios.post("/rooms", qs.stringify({
+          user: {
+            name: this.topic }
+          })
       );
 
       this.roomUrl = roomUrl;
       this.inviteUrl = inviteUrl;
-      copyToClipboard(this.inviteUrl);
-      Notify.create("Copied Room-Link to Clipboard!");
+      this.guiUrl = guiUrl;
+      Notify.create("Creating a Room for you!");
     },
     openRoom: function(event) {
-      window.open(this.roomUrl, "_blank");
+      this.$router.push({ path: "/room/" + this.roomUrl.split("/").pop() });
+    },
+    copyRoom: function(event) {
+      copyToClipboard(this.inviteUrl);
     }
   }
 };
