@@ -14,8 +14,8 @@
 
         <q-btn flat dense v-if="profile" class="menu-profile">
           <q-avatar>
-            <q-img :src="profile.image" alt="Test" v-if="profile.image" />
-            <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image" />
+            <q-img :src="`../statics/${profile.image}`" alt="Test" v-if="profile.image" />
+            <q-img src="../statics/img/userfotos/placeholder.png" alt="Test" v-if="!profile.image" />
           </q-avatar>
           &nbsp;
           {{ profile.name }}
@@ -89,6 +89,7 @@ export default {
   },
   beforeUpdate() {
     this.profile = getCurrentUser().profile;
+    console.log(this.profile);
   }
 };
 </script>

@@ -3,8 +3,8 @@
     <div class="row">
       <div class="col-auto">
         <q-avatar size="200px">
-          <q-img :src="profile.image" alt="Test" v-if="profile.image" />
-          <q-img src="../assets/userfotos/placeholder.png" alt="Test" v-if="!profile.image" />
+          <q-img :src="`../statics/${profile.image}`" alt="Test" v-if="profile.image" />
+          <q-img src="../statics/img/userfotos/placeholder.png" alt="Test" v-if="!profile.image" />
         </q-avatar>
       </div>
       <div class="col-1"></div>

@@ -9,7 +9,7 @@
           <div class="col">
             <div class="q-pa-md row items-start q-gutter-md">
               <q-card class="my-card" flat bordered>
-                <img :src="topic.image" v-if="topic.image"/>
+                <img :src="`../statics/${topic.image}`" v-if="topic.image"/>
                 <p v-if="!topic.image">No Image</p>
 
                 <q-card-section>
@@ -19,7 +19,7 @@
                 </q-card-section>
 
                 <q-card-actions>
-                  <q-btn flat>{{ $t("stepper.topics.start_session") }}</q-btn>
+                  <q-btn @click="openRoom" flat>{{ $t("stepper.topics.start_session") }}</q-btn>
                 </q-card-actions>
               </q-card>
             </div>
@@ -59,6 +59,9 @@ export default {
     updateStep(step) {
       this.step = step;
       this.$emit("stepChanged", this.step);
+    },
+    openRoom() {
+      this.$router.push({ path: "room" });
     }
   }
 };

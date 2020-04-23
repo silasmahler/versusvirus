@@ -70,15 +70,15 @@ export default {
       ],
       category: null,
       desription: "",
-      roomUrl: "",
-      inviteUrl: ""
+      roomUrl: null,
+      inviteUrl: null
     };
   },
   methods: {
-    createRoom: () => {
+    createRoom() {
       this.$router.push({ path: "room" });
     },
-    openRoom: () => {
+    openRoom() {
       this.$router.push({ path: "room" });
     }
   }
