@@ -41,7 +41,7 @@ export default {
       step: 1,
       peopleGroup: "friends",
       chefWanted: false,
-      topics: [{ title: "leaf_to_root" }, { title: "urban_agriculture" }]
+      topics: [{ title: "leaf_to_root", image: "img/leaf_to_root.jpg" }, { title: "urban_agriculture", image: "img/urban_agriculture.jpg" }]
     };
   }
 };

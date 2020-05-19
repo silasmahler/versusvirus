@@ -46,7 +46,7 @@ const user = (username, password, role, profile) => {
   };
 };
 
-const profile = (name, niche, vitae, recordingDevices, lang, image) => {
+const profile = (name, niche, vitae, recordingDevices, image, lang) => {
   return {
     name: name,
     niche: niche,
@@ -66,7 +66,8 @@ const data = [
       "Alfonds",
       "vegan, vegetarian",
       "Hi my name is Alfonds and i like cooking interesting dishes, especially vegan! #LoveThePlane #LoveTheEarth",
-      ["smartphone", "camera"]
+      ["smartphone", "camera"],
+      "img/userfotos/test1.png"
     )
   ),
   user(
@@ -78,7 +79,7 @@ const data = [
       "vegan",
       "TODO",
       ["smartphone", "notebook"],
-      "img/test1.png"
+      "img/userfotos/test1.png"
     )
   ),
   user(
@@ -90,19 +91,19 @@ const data = [
       "traditional",
       "TODO",
       ["camera", "notebook"],
-      "img/test2.png"
+      "img/userfotos/test2.png"
     )
   ),
   user(
     "test3",
     "test123",
     "user",
-    profile("Test 3", "italian", "TODO", ["notebook"], "img/test3.png")
+    profile("Test 3", "italian", "TODO", ["notebook"], "img/userfotos/test3.png")
   ),
   user(
     "test4",
     "test123",
     "chef",
-    profile("Test 4", "french", "TODO", ["smartphone"], "img/test4.png")
+    profile("Test 4", "french", "TODO", ["smartphone"], "img/userfotos/test4.png")
   ),
 ];

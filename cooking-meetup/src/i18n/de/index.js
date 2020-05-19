@@ -104,5 +104,10 @@ export default {
   errorPage: {
     message: 'Sorry, nothing here... 404',
     back: 'Go back'
+  },
+  conferenceRoom: {
+    chat: {
+      messagePlaceholder: 'Nachricht'
+    }
   }
 }
